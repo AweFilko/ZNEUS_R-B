@@ -1,4 +1,18 @@
 setup:
   df_file: "sports.csv"
   debug: True
+  sport:
+    - "sumo wrestling"
+    - "water polo"
+    - "ski jumping"
+    - "chuckwagon racing"
+    - "cheerleading"
+    - "canoe slamon"
+    - "formula 1 racing"
+    - "fly fishing"
+    - "bungee jumping"
+    - "rock climbing"
+    - "pole dancing"
+    - "track bicycle"
+    - "hurdles"
 
