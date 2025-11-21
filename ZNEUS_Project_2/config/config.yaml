@@ -1,0 +1,4 @@
+setup:
+  df_file: "sports.csv"
+  debug: True
+
