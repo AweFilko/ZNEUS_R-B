@@ -1,6 +1,7 @@
 setup:
   df_file: "sports.csv"
   debug: True
+  img_size: (224,224)
   sport:
     - "sumo wrestling"
     - "water polo"

@@ -3,7 +3,7 @@ import os
 import yaml
 import seaborn as sns
 import matplotlib.pyplot as plt
-from PIL import Image
+from PIL import Image, UnidentifiedImageError
 from torchvision import transforms
 from numpy.f2py.auxfuncs import throw_error
 import numpy as np
@@ -22,12 +22,16 @@ DEBUG = cfg["setup"]["debug"]
 # dist_plot(ld)
 #check_size(ld)
 #check_color(ld)
+# check_duplicates(ld)
+# check_corrupt_images(ld)
+# check_blank_images(ld)
+# check_aspect_ratio(ld)
 
 #___________________________________________________________________________________
 
 #Load data into data frame
 def load_data():
-    df = pd.read_csv(os.path.join(os.path.dirname(__file__), "..", "data", str(cfg["setup"]["df_file"])))
+    df = pd.read_csv(os.path.join(os.path.dirname(__file__), "..", "data", str(cfg["setup"]["df_file"]))    )
     if DEBUG:
         print(df.head(10))
         print(df.info())
@@ -48,13 +52,15 @@ def df_sport_adjust(df):
     return df
 
 def check_size(df):
+    target_size = cfg["setup"]["img_size"]
     for pth in df["filepaths"]:
         img = Image.open(f"../data/{pth}")
-        if img.size != (224, 224):
-            throw_error(f"{pth} is not a 224x224 image")
+        if img.size != target_size:
+            throw_error(f"{pth} is not a {target_size[0]}x{target_size[1]} image")
+    print("No size anomalies")
 
 def check_color(df):
-    fig, axes = plt.subplots(2, round(len(ld['labels'].unique())/2 + 0.1), figsize=(15, 8))
+    fig, axes = plt.subplots(2,round(len(df['labels'].unique()) / 2 + 0.1),figsize=(15, 8))
     axes = axes.flatten()
     for i, label in enumerate(cfg["setup"]["sport"]):
         count = 0
@@ -78,14 +84,41 @@ def check_duplicates(df):
     print("Duplicate filepaths:", df["filepaths"].duplicated().sum())
     print("Duplicate rows:", df.duplicated().sum())
 
+def check_corrupt_images(df):
+    corrupt = []
+    for pth in df["filepaths"]:
+        full_path = f"../data/{pth}"
+        try:
+            img = Image.open(full_path)
+            img.verify()
+        except (UnidentifiedImageError, OSError):
+            corrupt.append(full_path)
+
+    print("Corrupt images found:", len(corrupt))
+    for c in corrupt:
+        print(" -", c)
+
+def check_blank_images(df, std_threshold=5):
+    blank_images = []
+
+    for pth in df["filepaths"]:
+        img = Image.open(f"../data/{pth}").convert("RGB")
+        arr = np.array(img).astype(np.float32)
+        if arr.std() < std_threshold:
+            blank_images.append(pth)
+
+    print("Blank or near-blank images:", len(blank_images))
+    for p in blank_images:
+        print(" -", p)
+
 def compute_mean_std(df):
     means = []
     stds = []
     for pth in df["filepaths"]:
         img = Image.open(f"../data/{pth}").convert("RGB")
         img = np.array(img).astype("float32") / 255.0
-        means.append(np.mean(img, axis=(0,1)))
-        stds.append(np.std(img, axis=(0,1)))
+        means.append(np.mean(img, axis=(0, 1)))
+        stds.append(np.std(img, axis=(0, 1)))
     return np.mean(means, axis=0), np.mean(stds, axis=0)
 
 def build_transform(df, normalize=True):
@@ -93,17 +126,25 @@ def build_transform(df, normalize=True):
 
     if normalize:
         mean, std = compute_mean_std(df)
-        transform_list.append(transforms.Normalize(mean, std))
+        transform_list += transforms.Normalize(mean, std)
 
     return transforms.Compose(transform_list)
 
 
 ld = load_data()
 ld = df_sport_adjust(ld)
-#dist_plot(ld)
-#check_size(ld)
-#check_color(ld)
-#check_duplicates(ld)
-transform = build_transform(ld)
-img = Image.open(f"../data/test/").convert("RGB")
-print()
+# dist_plot(ld)
+# check_size(ld)
+# check_color(ld)
+# check_duplicates(ld)
+# check_corrupt_images(ld)
+# check_blank_images(ld)
+# check_aspect_ratio(ld)
+
+#print(compute_mean_std(ld))
+
+# TODO Validation Metrics: ACC, PRE, REC, F1, Confusion matrix
+
+# TODO Transformations: RandomHorizontalFlip,  RandomRotation, ColorJitter
+
+# TODO opencv library, color histogram, entropy statistics, time and acc differences
