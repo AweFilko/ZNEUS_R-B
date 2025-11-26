@@ -13,6 +13,10 @@ from torchvision import transforms
 from torch.utils.data import DataLoader, Dataset
 #import torch
 
+from model import *
+from train import *
+from evaluation import *
+
 # ________________________________main material_____________________________________
 # Load config file - main material
 path = os.path.join(os.path.dirname(__file__), "..", "config", "config.yaml")
@@ -159,11 +163,32 @@ def build_transform(df, normalize=True):
 # -------------------------------------------------------------------------
 # Custom dataset for single image paths
 # -------------------------------------------------------------------------
+# class SingleImageDataset(Dataset):
+#     def __init__(self, df, transform=None):
+#         self.paths = df["filepaths"].values
+#         self.labels = df["labels"].values
+#         self.transform = transform
+#
+#     def __len__(self):
+#         return len(self.paths)
+#
+#     def __getitem__(self, idx):
+#         img_path = f"../data/{self.paths[idx]}"
+#         img = Image.open(img_path).convert("RGB")
+#         if self.transform:
+#             img = self.transform(img)
+#         # convert labels to numeric (ImageFolder emulation)
+#         return img, self.labels[idx]
+
 class SingleImageDataset(Dataset):
     def __init__(self, df, transform=None):
         self.paths = df["filepaths"].values
-        self.labels = df["labels"].values
+        self.label_names = df["labels"].values
         self.transform = transform
+
+        #mapping string to integer
+        self.classes = sorted(df["labels"].unique())
+        self.class_to_idx = {cls: i for i, cls in enumerate(self.classes)}
 
     def __len__(self):
         return len(self.paths)
@@ -171,10 +196,15 @@ class SingleImageDataset(Dataset):
     def __getitem__(self, idx):
         img_path = f"../data/{self.paths[idx]}"
         img = Image.open(img_path).convert("RGB")
+
         if self.transform:
             img = self.transform(img)
-        # convert labels to numeric (ImageFolder emulation)
-        return img, self.labels[idx]
+
+        label_name = self.label_names[idx]
+        label = self.class_to_idx[label_name]   # convert to int
+
+        return img, label
+
 
 # -------------------------------------------------------------------------
 
@@ -204,6 +234,52 @@ loader = image_loader(ld)
 # check_blank_images(ld)
 
 # print(compute_mean_std(ld))
+
+
+#later for main:!!!
+num_classes = 14
+device = "cuda" if torch.cuda.is_available() else "cpu"
+
+num_classes = len(ld["labels"].unique())
+device = "cuda" if torch.cuda.is_available() else "cpu"
+
+# Train SimpleCNN
+print("\n=== Train SimpleCNN ===")
+simple = SimpleCNN(num_classes)
+trained_simple, hist_simple = train_model(simple, loader, num_epochs=50, lr=0.001, device=device)
+
+# Train DeepCNN
+print("\n=== Train DeepCNN ===")
+deep = DeepCNN(num_classes)
+trained_deep, hist_deep = train_model(deep, loader, num_epochs=50, lr=0.0005, device=device)
+
+# Train openCV thingy
+# print("\n=== Train  ===")
+#hereeeee
+
+# SimpleCNN analysis
+print("\n=== SimpleCNN analysis ===")
+acc_s, prec_s, rec_s, f1_s, y_true_s, y_pred_s = get_metrics(trained_simple, loader)
+plot_training_curves(hist_simple, "SimpleCNN")
+# confused_mat(y_true_s, y_pred_s, class_names)
+
+# DeepCNN analysis
+print("\n=== DeepCNN analysis ===")
+acc_d, prec_d, rec_d, f1_d, y_true_d, y_pred_d = get_metrics(trained_deep, loader)
+plot_training_curves(hist_deep, "DeepCNN")
+# confused_mat(y_true_d, y_pred_d, class_names)
+
+# OpenCV analysis
+# print("\n===  analysis ===")
+
+# Comparison
+compare_models({
+    "SimpleCNN": (acc_s, prec_s, rec_s, f1_s),
+    "DeepCNN":   (acc_d, prec_d, rec_d, f1_d),
+})
+
+
+
 
 # TODO Validation Metrics: ACC, PRE, REC, F1, Confusion matrix
 # TODO Transformations: RandomHorizontalFlip,  RandomRotation, ColorJitter (done)
