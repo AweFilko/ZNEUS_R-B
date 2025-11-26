@@ -1,12 +1,20 @@
+import re
 import pandas as pd
 import os
 import yaml
+from PIL import Image, UnidentifiedImageError
 import seaborn as sns
 import matplotlib.pyplot as plt
+<<<<<<< HEAD
+=======
 from PIL import Image, UnidentifiedImageError
 from torchvision import transforms
+>>>>>>> b1c0176bf337c737327c49a4e0634463783d859e
 from numpy.f2py.auxfuncs import throw_error
 import numpy as np
+from torchvision import transforms
+from torch.utils.data import DataLoader, Dataset
+import torch
 
 # ________________________________main material_____________________________________
 # Load config file - main material
@@ -17,6 +25,8 @@ print(cfg)
 
 DEBUG = cfg["setup"]["debug"]
 
+<<<<<<< HEAD
+=======
 # ld = load_data()
 # ld = df_sport_adjust(ld)
 # dist_plot(ld)
@@ -27,6 +37,7 @@ DEBUG = cfg["setup"]["debug"]
 # check_blank_images(ld)
 # check_aspect_ratio(ld)
 
+>>>>>>> b1c0176bf337c737327c49a4e0634463783d859e
 #___________________________________________________________________________________
 
 #Load data into data frame
@@ -49,18 +60,38 @@ def df_sport_adjust(df):
     sport = cfg["setup"]["sport"]
     df = df.where(df['labels'].isin(sport))
     df = df.dropna()
+    if DEBUG:
+        print("data frame adjustment for :", sport)
     return df
 
 def check_size(df):
+<<<<<<< HEAD
+    # convert config tuple or "(224,224)" string to int tuple !!
+    size_def = cfg["setup"]["img_size"]
+    if isinstance(size_def, str):
+        target_size = tuple(map(int, re.findall(r"\d+", size_def)))
+    else:
+        target_size = tuple(size_def)
+
+=======
     target_size = cfg["setup"]["img_size"]
+>>>>>>> b1c0176bf337c737327c49a4e0634463783d859e
     for pth in df["filepaths"]:
         img = Image.open(f"../data/{pth}")
         if img.size != target_size:
             throw_error(f"{pth} is not a {target_size[0]}x{target_size[1]} image")
+<<<<<<< HEAD
+    if DEBUG:
+        print("No size anomalies")
+
+def check_color(df):
+    fig, axes = plt.subplots(2, round(len(df['labels'].unique()) / 2 + 0.1), figsize=(15, 8))
+=======
     print("No size anomalies")
 
 def check_color(df):
     fig, axes = plt.subplots(2,round(len(df['labels'].unique()) / 2 + 0.1),figsize=(15, 8))
+>>>>>>> b1c0176bf337c737327c49a4e0634463783d859e
     axes = axes.flatten()
     for i, label in enumerate(cfg["setup"]["sport"]):
         count = 0
@@ -70,7 +101,8 @@ def check_color(df):
             img = np.array(img).astype("float32") / 255
             mean_img += img
             count += 1
-        mean_img /= count
+        if count > 0:
+            mean_img /= count
         ax = axes[i]
         ax.imshow(mean_img)
         ax.set_title(label)
@@ -81,8 +113,38 @@ def check_color(df):
     plt.show()
 
 def check_duplicates(df):
-    print("Duplicate filepaths:", df["filepaths"].duplicated().sum())
-    print("Duplicate rows:", df.duplicated().sum())
+    if DEBUG:
+        print("Duplicate filepaths:", df["filepaths"].duplicated().sum())
+        print("Duplicate rows:", df.duplicated().sum())
+
+def check_corrupt_images(df):
+    corrupt = []
+    for pth in df["filepaths"]:
+        full_path = f"../data/{pth}"
+        try:
+            img = Image.open(full_path)
+            img.verify()
+        except (UnidentifiedImageError, OSError):
+            corrupt.append(full_path)
+
+    if DEBUG:
+        print("Corrupt images found:", len(corrupt))
+        for c in corrupt:
+            print(" -", c)
+
+def check_blank_images(df, std_threshold=5):
+    blank_images = []
+
+    for pth in df["filepaths"]:
+        img = Image.open(f"../data/{pth}").convert("RGB")
+        arr = np.array(img).astype(np.float32)
+        if arr.std() < std_threshold:
+            blank_images.append(pth)
+
+    if DEBUG:
+        print("Blank or near-blank images:", len(blank_images))
+        for p in blank_images:
+            print(" -", p)
 
 def check_corrupt_images(df):
     corrupt = []
@@ -119,20 +181,80 @@ def compute_mean_std(df):
         img = np.array(img).astype("float32") / 255.0
         means.append(np.mean(img, axis=(0, 1)))
         stds.append(np.std(img, axis=(0, 1)))
+<<<<<<< HEAD
+    mean = np.mean(means, axis=0)
+    std = np.mean(stds, axis=0)
+    if DEBUG:
+        print("Mean and std:", mean, std)
+    return mean, std
+=======
     return np.mean(means, axis=0), np.mean(stds, axis=0)
+>>>>>>> b1c0176bf337c737327c49a4e0634463783d859e
 
 def build_transform(df, normalize=True):
-    transform_list = [transforms.ToTensor()]
+    values = cfg['setup']['transform']
+    if DEBUG:
+        print("Building transform")
+
+    transform_list = [
+        transforms.Resize((224, 224)),  # -> keeps data consistent
+        transforms.RandomHorizontalFlip(float(values['horizontal_flip_prob'])),
+        transforms.RandomRotation(int(values['random_rotation_degree'])),
+        transforms.ColorJitter(**values['color_jitter']),
+        transforms.ToTensor()
+    ]
 
     if normalize:
         mean, std = compute_mean_std(df)
+<<<<<<< HEAD
+        transform_list += [transforms.Normalize(mean, std)]
+=======
         transform_list += transforms.Normalize(mean, std)
+>>>>>>> b1c0176bf337c737327c49a4e0634463783d859e
 
     return transforms.Compose(transform_list)
+
+# -------------------------------------------------------------------------
+# Custom dataset for single image paths
+# -------------------------------------------------------------------------
+class SingleImageDataset(Dataset):
+    def __init__(self, df, transform=None):
+        self.paths = df["filepaths"].values
+        self.labels = df["labels"].values
+        self.transform = transform
+
+    def __len__(self):
+        return len(self.paths)
+
+    def __getitem__(self, idx):
+        img_path = f"../data/{self.paths[idx]}"
+        img = Image.open(img_path).convert("RGB")
+        if self.transform:
+            img = self.transform(img)
+        # convert labels to numeric (ImageFolder emulation)
+        return img, self.labels[idx]
+
+# -------------------------------------------------------------------------
+
+def image_loader(df):
+    # correct batch size reading
+    batch_size = cfg['model_hyperparams']['batch_size']
+    transform = build_transform(df, normalize=cfg['setup']['transform']['normalization'])
+
+    dataset = SingleImageDataset(df, transform)
+    loader = DataLoader(dataset, batch_size=batch_size, shuffle=True)
+
+    return loader
 
 
 ld = load_data()
 ld = df_sport_adjust(ld)
+<<<<<<< HEAD
+loader = image_loader(ld)
+
+# TODO Validation Metrics: ACC, PRE, REC, F1, Confusion matrix
+# TODO Transformations: RandomHorizontalFlip,  RandomRotation, ColorJitter (done)
+=======
 # dist_plot(ld)
 # check_size(ld)
 # check_color(ld)
@@ -147,4 +269,5 @@ ld = df_sport_adjust(ld)
 
 # TODO Transformations: RandomHorizontalFlip,  RandomRotation, ColorJitter
 
+>>>>>>> b1c0176bf337c737327c49a4e0634463783d859e
 # TODO opencv library, color histogram, entropy statistics, time and acc differences
