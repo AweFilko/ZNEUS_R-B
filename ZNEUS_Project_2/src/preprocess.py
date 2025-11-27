@@ -1,30 +1,14 @@
 import re
-import pandas as pd
 import os
-import yaml
-#from PIL import Image, UnidentifiedImageError
-import seaborn as sns
-import matplotlib.pyplot as plt
+import pandas as pd
 from PIL import Image, UnidentifiedImageError
-#from torchvision import transforms
 from numpy.f2py.auxfuncs import throw_error
-import numpy as np
 from torchvision import transforms
 from torch.utils.data import DataLoader, Dataset
-#import torch
-
-from model import *
-from train import *
 from evaluation import *
 
 # ________________________________main material_____________________________________
 # Load config file - main material
-path = os.path.join(os.path.dirname(__file__), "..", "config", "config.yaml")
-with open(path, "r") as f:
-    cfg = yaml.safe_load(f)
-print(cfg)
-
-DEBUG = cfg["setup"]["debug"]
 
 # ld = load_data()
 # ld = df_sport_adjust(ld)
@@ -39,9 +23,9 @@ DEBUG = cfg["setup"]["debug"]
 #___________________________________________________________________________________
 
 #Load data into data frame
-def load_data():
+def load_data(cfg):
     df = pd.read_csv(os.path.join(os.path.dirname(__file__), "..", "data", str(cfg["setup"]["df_file"]))    )
-    if DEBUG:
+    if cfg["setup"]["debug"]:
         print(df.head(10))
         print(df.info())
     return df
@@ -54,25 +38,25 @@ def dist_plot(df):
     plt.show()
     print(df["labels"].value_counts(normalize=True) * 100)
 
-def df_sport_adjust(df):
+def df_sport_adjust(df, cfg):
     sport = cfg["setup"]["sport"]
     df = df.where(df['labels'].isin(sport))
     df = df.dropna()
-    if DEBUG:
+    if cfg["setup"]["debug"]:
         print("data frame adjustment for :", sport)
     return df
 
-def check_size(df):
+def check_size(df, cfg):
     target_size = cfg["setup"]["img_size"]
     target_size = re.findall(r"\d+", target_size)
     for pth in df["filepaths"]:
         img = Image.open(f"../data/{pth}")
         if img.size != target_size:
             throw_error(f"{pth} is not a {target_size[0]}x{target_size[1]} image")
-    if DEBUG:
+    if cfg["setup"]["debug"]:
         print("No size anomalies")
 
-def check_color(df):
+def check_color(df, cfg):
     fig, axes = plt.subplots(2,round(len(df['labels'].unique()) / 2 + 0.1),figsize=(15, 8))
     axes = axes.flatten()
     for i, label in enumerate(cfg["setup"]["sport"]):
@@ -94,12 +78,12 @@ def check_color(df):
     plt.tight_layout()
     plt.show()
 
-def check_duplicates(df):
-    if DEBUG:
+def check_duplicates(df, cfg):
+    if cfg["setup"]["debug"]:
         print("Duplicate filepaths:", df["filepaths"].duplicated().sum())
         print("Duplicate rows:", df.duplicated().sum())
 
-def check_corrupt_images(df):
+def check_corrupt_images(df, cfg):
     corrupt = []
     for pth in df["filepaths"]:
         full_path = f"../data/{pth}"
@@ -109,12 +93,12 @@ def check_corrupt_images(df):
         except (UnidentifiedImageError, OSError):
             corrupt.append(full_path)
 
-    if DEBUG:
+    if cfg["setup"]["debug"]:
         print("Corrupt images found:", len(corrupt))
         for c in corrupt:
             print(" -", c)
 
-def check_blank_images(df, std_threshold=5):
+def check_blank_images(df, cfg ,std_threshold=5):
     blank_images = []
 
     for pth in df["filepaths"]:
@@ -123,12 +107,12 @@ def check_blank_images(df, std_threshold=5):
         if arr.std() < std_threshold:
             blank_images.append(pth)
 
-    if DEBUG:
+    if cfg["setup"]["debug"]:
         print("Blank or near-blank images:", len(blank_images))
         for p in blank_images:
             print(" -", p)
 
-def compute_mean_std(df):
+def compute_mean_std(df, cfg):
     means = []
     stds = []
     for pth in df["filepaths"]:
@@ -138,13 +122,13 @@ def compute_mean_std(df):
         stds.append(np.std(img, axis=(0, 1)))
     mean = np.mean(means, axis=0)
     std = np.mean(stds, axis=0)
-    if DEBUG:
+    if cfg["setup"]["debug"]:
         print("Mean and std:", mean, std)
     return mean, std
 
-def build_transform(df, normalize=True):
+def build_transform(df, cfg,normalize=True):
     values = cfg['setup']['transform']
-    if DEBUG:
+    if cfg["setup"]["debug"]:
         print("Building transform")
 
     transform_list = [
@@ -155,38 +139,16 @@ def build_transform(df, normalize=True):
     ]
 
     if normalize:
-        mean, std = compute_mean_std(df)
+        mean, std = compute_mean_std(df, cfg)
         transform_list += [transforms.Normalize(mean, std)]
 
     return transforms.Compose(transform_list)
-
-# -------------------------------------------------------------------------
-# Custom dataset for single image paths
-# -------------------------------------------------------------------------
-# class SingleImageDataset(Dataset):
-#     def __init__(self, df, transform=None):
-#         self.paths = df["filepaths"].values
-#         self.labels = df["labels"].values
-#         self.transform = transform
-#
-#     def __len__(self):
-#         return len(self.paths)
-#
-#     def __getitem__(self, idx):
-#         img_path = f"../data/{self.paths[idx]}"
-#         img = Image.open(img_path).convert("RGB")
-#         if self.transform:
-#             img = self.transform(img)
-#         # convert labels to numeric (ImageFolder emulation)
-#         return img, self.labels[idx]
 
 class SingleImageDataset(Dataset):
     def __init__(self, df, transform=None):
         self.paths = df["filepaths"].values
         self.label_names = df["labels"].values
         self.transform = transform
-
-        #mapping string to integer
         self.classes = sorted(df["labels"].unique())
         self.class_to_idx = {cls: i for i, cls in enumerate(self.classes)}
 
@@ -206,24 +168,32 @@ class SingleImageDataset(Dataset):
         return img, label
 
 
-# -------------------------------------------------------------------------
-
-def image_loader(df):
-    # correct batch size reading
+def image_loader(df, cfg):
     batch_size = cfg['model_hyperparams']['batch_size']
-    transform = build_transform(df, normalize=cfg['setup']['transform']['normalization'])
+    transform = build_transform(df, cfg,normalize=cfg['setup']['transform']['normalization'])
 
-    dataset = SingleImageDataset(df, transform)
-    loader_ = DataLoader(dataset, batch_size=batch_size, shuffle=True)
+    dataset_test = SingleImageDataset(df[df['data set'] == 'test'], transform)
+    dataset_train = SingleImageDataset(df[df['data set'] == 'train'], transform)
+    dataset_validate = SingleImageDataset(df[df['data set'] == 'valid'], transform)
 
-    return loader_
+    loader_train = DataLoader(dataset_train, batch_size=batch_size, shuffle=True)
+    loader_test = DataLoader(dataset_test, batch_size=batch_size, shuffle=True)
+    loader_validate = DataLoader(dataset_validate, batch_size=batch_size, shuffle=True)
 
-
-ld = load_data()
-ld = df_sport_adjust(ld)
-loader = image_loader(ld)
+    return loader_test, loader_train, loader_validate
 
 # print(loader)
+
+def preprocess_nd_load(cfg):
+    df = load_data(cfg=cfg)
+    df = df_sport_adjust(df, cfg=cfg)
+    dist_plot(df)
+    check_size(df, cfg=cfg)
+    check_duplicates(df, cfg=cfg)
+    check_corrupt_images(df, cfg=cfg)
+    check_blank_images(df, cfg=cfg)
+    loader = image_loader(df, cfg=cfg)
+    return loader
 
 
 # dist_plot(ld)
@@ -236,51 +206,3 @@ loader = image_loader(ld)
 # print(compute_mean_std(ld))
 
 
-#later for main:!!!
-num_classes = 14
-device = "cuda" if torch.cuda.is_available() else "cpu"
-
-num_classes = len(ld["labels"].unique())
-device = "cuda" if torch.cuda.is_available() else "cpu"
-
-# Train SimpleCNN
-print("\n=== Train SimpleCNN ===")
-simple = SimpleCNN(num_classes)
-trained_simple, hist_simple = train_model(simple, loader, num_epochs=50, lr=0.001, device=device)
-
-# Train DeepCNN
-print("\n=== Train DeepCNN ===")
-deep = DeepCNN(num_classes)
-trained_deep, hist_deep = train_model(deep, loader, num_epochs=50, lr=0.0005, device=device)
-
-# Train openCV thingy
-# print("\n=== Train  ===")
-#hereeeee
-
-# SimpleCNN analysis
-print("\n=== SimpleCNN analysis ===")
-acc_s, prec_s, rec_s, f1_s, y_true_s, y_pred_s = get_metrics(trained_simple, loader)
-plot_training_curves(hist_simple, "SimpleCNN")
-# confused_mat(y_true_s, y_pred_s, class_names)
-
-# DeepCNN analysis
-print("\n=== DeepCNN analysis ===")
-acc_d, prec_d, rec_d, f1_d, y_true_d, y_pred_d = get_metrics(trained_deep, loader)
-plot_training_curves(hist_deep, "DeepCNN")
-# confused_mat(y_true_d, y_pred_d, class_names)
-
-# OpenCV analysis
-# print("\n===  analysis ===")
-
-# Comparison
-compare_models({
-    "SimpleCNN": (acc_s, prec_s, rec_s, f1_s),
-    "DeepCNN":   (acc_d, prec_d, rec_d, f1_d),
-})
-
-
-
-
-# TODO Validation Metrics: ACC, PRE, REC, F1, Confusion matrix
-# TODO Transformations: RandomHorizontalFlip,  RandomRotation, ColorJitter (done)
-# TODO opencv library, color histogram, entropy statistics, time and acc differences

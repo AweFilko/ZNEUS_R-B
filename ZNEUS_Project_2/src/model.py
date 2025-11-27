@@ -7,20 +7,20 @@ class SimpleCNN(nn.Module):
         super().__init__()
         self.net = nn.Sequential(
             nn.Conv2d(3, 32, 3, padding=1), #2D convolution layer
-            nn.ReLU(),
+            nn.LeakyReLU(),
             nn.MaxPool2d(2),      # 112x112 -> downsampling layer
 
             nn.Conv2d(32, 64, 3, padding=1),
-            nn.ReLU(),
+            nn.LeakyReLU(),
             nn.MaxPool2d(2),      # 56x56
 
             nn.Conv2d(64, 128, 3, padding=1),
-            nn.ReLU(),
+            nn.LeakyReLU(),
             nn.MaxPool2d(2),      # 28x28
 
             nn.Flatten(),
             nn.Linear(128 * 28 * 28, 256),
-            nn.ReLU(),
+            nn.LeakyReLU(),
             nn.Linear(256, num_classes)
         )
 
@@ -60,10 +60,10 @@ class DeepCNN(nn.Module):
         x = self.pool(F.relu(self.bn1(self.conv1(x))))
         x = self.pool(F.relu(self.bn2(self.conv2(x))))
 
-        x = F.relu(self.bn3(self.conv3(x)))
+        x = F.leaky_relu(self.bn3(self.conv3(x)))
         x = self.pool(F.relu(self.bn4(self.conv4(x))))
 
-        x = F.relu(self.bn5(self.conv5(x)))
+        x = F.leaky_relu(self.bn5(self.conv5(x)))
 
         # print(x.shape)
 

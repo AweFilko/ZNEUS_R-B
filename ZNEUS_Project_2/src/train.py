@@ -1,9 +1,7 @@
 import torch
 import torch.nn as nn
 import torch.optim as optim
-
-
-
+from model import *
 # SimpleCNN:
 # # LR = 0.001
 # # Epochs = 20–35
@@ -18,9 +16,19 @@ import torch.optim as optim
 # # Dropout = 0.4–0.5
 # # Weight decay = 5e-4
 
-def train_model(model, train_loader, num_epochs=50, lr=0.001, device=None):
-    if device is None:
-        device = "cuda" if torch.cuda.is_available() else "cpu"
+def train_model(model, train_loader, cfg=None):
+
+    if isinstance(model, SimpleCNN):
+        print("\n=== SimpleCNN Train ===")
+    elif isinstance(model, DeepCNN):
+        print("\n=== DeepCNN Train ===")
+    else:
+        print("\n=== FENN Train ===")
+
+    num_epochs = int(cfg['model_hyperparams']["epochs"])
+    lr = float(cfg['model_hyperparams']['learning_rate'])
+    device = cfg['setup']['device']
+
 
     model = model.to(device)
     criterion = nn.CrossEntropyLoss()
@@ -45,9 +53,9 @@ def train_model(model, train_loader, num_epochs=50, lr=0.001, device=None):
             optimizer.step()
 
             running_loss += loss.item() * imgs.size(0)
-            _, preds = torch.max(outputs, 1)
+            _, pred = torch.max(outputs, 1)
             total += labels.size(0)
-            correct += (preds == labels).sum().item()
+            correct += (pred == labels).sum().item()
 
         epoch_loss = running_loss / total
         epoch_acc = correct / total

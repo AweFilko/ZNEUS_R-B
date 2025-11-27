@@ -1,6 +1,7 @@
 setup:
   df_file: "sports.csv"
   debug: True
+  device: "cuda" #"cpu"
   img_size: (224,224)
   sport:
     - "sumo wrestling"
@@ -27,6 +28,10 @@ setup:
       hue: 0.1
     normalization: True
 model_hyperparams:
-  batch_size: 32
+  batch_size: 256
+  epochs: 10
+  learning_rate: 0.001
+
+
 
 

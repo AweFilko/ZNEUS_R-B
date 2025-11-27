@@ -6,8 +6,6 @@ import seaborn as sns
 
 
 def get_metrics(model, loader, device=None):
-    if device is None:
-        device = "cuda" if torch.cuda.is_available() else "cpu"
 
     model.eval()
     model.to(device)
@@ -64,7 +62,7 @@ def confused_mat(y_true, y_pred, class_names):
     #hehe
     cm = confusion_matrix(y_true, y_pred)
 
-    plt.figure(figsize=(8, 6))
+    plt.figure(figsize=(15, 8))
     sns.heatmap(
         cm,
         annot=True,
@@ -88,4 +86,5 @@ def compare_models(results_dict):
     for name, (acc, prec, rec, f1) in results_dict.items():
         print(f"{name:12}  {acc:.4f}  {prec:.4f}  {rec:.4f}  {f1:.4f}")
 
-    print()
+def evaluate_model(model, loader):
+    acc, prec, rec, f1, y_true, y_pred = get_metrics(model, loader)
