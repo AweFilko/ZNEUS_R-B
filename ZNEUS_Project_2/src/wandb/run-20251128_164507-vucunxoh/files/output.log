@@ -1,0 +1,13 @@
+
+=== FENN Train ===
+Epoch 1/1  Train Loss: 13.5046  Acc: 0.0960 | Val Loss: 15.8677  Val Acc: 0.1000
+
+=== FENN Analysis ===
+Traceback (most recent call last):
+  File "C:\Users\filip\PycharmProjects\ZNEUS_R&B\ZNEUS_R-B\ZNEUS_Project_2\src\main.py", line 42, in <module>
+    evaluate_model(trained_simple, loader, device, cfg)
+  File "C:\Users\filip\PycharmProjects\ZNEUS_R&B\ZNEUS_R-B\ZNEUS_Project_2\src\evaluation.py", line 101, in evaluate_model
+    acc, prec, rec, f1, y_true, y_pred = get_metrics(model, loader, device)
+  File "C:\Users\filip\PycharmProjects\ZNEUS_R&B\ZNEUS_R-B\ZNEUS_Project_2\src\evaluation.py", line 20, in get_metrics
+    for imgs, labels in loader:
+ValueError: not enough values to unpack (expected 2, got 1)

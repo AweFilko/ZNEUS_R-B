@@ -1,0 +1,18 @@
+
+=== FENN Train ===
+Epoch 1/1  Train Loss: 12.5281  Acc: 0.1017 | Val Loss: 18.0276  Val Acc: 0.1000
+
+=== FENN Analysis ===
+Traceback (most recent call last):
+  File "C:\Users\filip\PycharmProjects\ZNEUS_R&B\ZNEUS_R-B\ZNEUS_Project_2\src\main.py", line 34, in <module>
+    evaluate_model(trained_simple,device, loader)
+  File "C:\Users\filip\PycharmProjects\ZNEUS_R&B\ZNEUS_R-B\ZNEUS_Project_2\src\evaluation.py", line 101, in evaluate_model
+    acc, prec, rec, f1, y_true, y_pred = get_metrics(model, loader, device)
+  File "C:\Users\filip\PycharmProjects\ZNEUS_R&B\ZNEUS_R-B\ZNEUS_Project_2\src\evaluation.py", line 14, in get_metrics
+    model.to(device)
+  File "C:\Users\filip\miniconda3\envs\torch310\lib\site-packages\torch\nn\modules\module.py", line 1299, in to
+    device, dtype, non_blocking, convert_to_format = torch._C._nn._parse_to(
+TypeError: to() received an invalid combination of arguments - got (tuple), but expected one of:
+ * (torch.device device = None, torch.dtype dtype = None, bool non_blocking = False, bool copy = False, *, torch.memory_format memory_format = None)
+ * (torch.dtype dtype, bool non_blocking = False, bool copy = False, *, torch.memory_format memory_format = None)
+ * (Tensor tensor, bool non_blocking = False, bool copy = False, *, torch.memory_format memory_format = None)

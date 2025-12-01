@@ -1,0 +1,7 @@
+
+=== FENN Train ===
+Epoch 1/1  Train Loss: 13.6662  Acc: 0.1074 | Val Loss: 26.0336  Val Acc: 0.0714
+Traceback (most recent call last):
+  File "C:\Users\filip\PycharmProjects\ZNEUS_R&B\ZNEUS_R-B\ZNEUS_Project_2\src\main.py", line 34, in <module>
+    evaluate_model(trained_simple, loader)
+TypeError: evaluate_model() missing 1 required positional argument: 'device'

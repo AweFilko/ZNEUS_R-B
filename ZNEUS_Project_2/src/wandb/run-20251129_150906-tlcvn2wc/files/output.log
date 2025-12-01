@@ -1,0 +1,33 @@
+
+===lively-rain-711_SimpleCNN Train===
+Epoch 1/5  Train Loss: 2.4602  Acc: 0.2019
+Epoch 2/5  Train Loss: 2.0814  Acc: 0.3340
+Epoch 3/5  Train Loss: 1.8946  Acc: 0.3939
+Epoch 4/5  Train Loss: 1.7205  Acc: 0.4652
+Epoch 5/5  Train Loss: 1.6126  Acc: 0.4951
+
+===lively-rain-711_SimpleCNN Analysis===
+
+=== SimpleCNN Analysis ===
+Traceback (most recent call last):
+  File "C:\Users\filip\PycharmProjects\ZNEUS_R&B\ZNEUS_R-B\ZNEUS_Project_2\src\main.py", line 49, in <module>
+    evaluate_model(trained_model, loader[2], device, cfg)
+  File "C:\Users\filip\PycharmProjects\ZNEUS_R&B\ZNEUS_R-B\ZNEUS_Project_2\src\evaluation.py", line 101, in evaluate_model
+    acc, prec, rec, f1, y_true, y_pred = get_metrics(model, loader, device)
+  File "C:\Users\filip\PycharmProjects\ZNEUS_R&B\ZNEUS_R-B\ZNEUS_Project_2\src\evaluation.py", line 20, in get_metrics
+    for imgs, labels in loader:
+  File "C:\Users\filip\miniconda3\envs\torch310\lib\site-packages\torch\utils\data\dataloader.py", line 701, in __next__
+    data = self._next_data()
+  File "C:\Users\filip\miniconda3\envs\torch310\lib\site-packages\torch\utils\data\dataloader.py", line 757, in _next_data
+    data = self._dataset_fetcher.fetch(index)  # may raise StopIteration
+  File "C:\Users\filip\miniconda3\envs\torch310\lib\site-packages\torch\utils\data\_utils\fetch.py", line 55, in fetch
+    return self.collate_fn(data)
+  File "C:\Users\filip\miniconda3\envs\torch310\lib\site-packages\torch\utils\data\_utils\collate.py", line 398, in default_collate
+    return collate(batch, collate_fn_map=default_collate_fn_map)
+  File "C:\Users\filip\miniconda3\envs\torch310\lib\site-packages\torch\utils\data\_utils\collate.py", line 211, in collate
+    return [
+  File "C:\Users\filip\miniconda3\envs\torch310\lib\site-packages\torch\utils\data\_utils\collate.py", line 212, in <listcomp>
+    collate(samples, collate_fn_map=collate_fn_map)
+  File "C:\Users\filip\miniconda3\envs\torch310\lib\site-packages\torch\utils\data\_utils\collate.py", line 240, in collate
+    raise TypeError(default_collate_err_msg_format.format(elem_type))
+TypeError: default_collate: batch must contain tensors, numpy arrays, numbers, dicts or lists; found <class 'PIL.Image.Image'>

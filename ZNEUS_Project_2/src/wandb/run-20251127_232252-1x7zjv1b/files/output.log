@@ -1,0 +1,40 @@
+
+=== FENN Train ===
+Epoch 1/35  Loss: 6.1662  Acc: 0.0826
+Epoch 2/35  Loss: 2.5831  Acc: 0.1167
+Epoch 3/35  Loss: 2.5897  Acc: 0.1177
+Epoch 4/35  Loss: 2.5665  Acc: 0.1224
+Epoch 5/35  Loss: 2.5594  Acc: 0.1234
+Epoch 6/35  Loss: 2.5393  Acc: 0.1193
+Epoch 7/35  Loss: 2.5411  Acc: 0.1301
+Epoch 8/35  Loss: 2.5470  Acc: 0.1415
+Epoch 9/35  Loss: 2.5319  Acc: 0.1399
+Epoch 10/35  Loss: 2.5249  Acc: 0.1425
+Epoch 11/35  Loss: 2.5315  Acc: 0.1440
+Epoch 12/35  Loss: 2.5343  Acc: 0.1430
+Epoch 13/35  Loss: 2.5209  Acc: 0.1435
+Epoch 14/35  Loss: 2.5381  Acc: 0.1404
+Epoch 15/35  Loss: 2.5263  Acc: 0.1466
+Epoch 16/35  Loss: 2.5159  Acc: 0.1440
+Epoch 17/35  Loss: 2.5181  Acc: 0.1446
+Epoch 18/35  Loss: 2.5066  Acc: 0.1477
+Epoch 19/35  Loss: 2.5062  Acc: 0.1477
+Epoch 20/35  Loss: 2.5083  Acc: 0.1435
+Epoch 21/35  Loss: 2.5028  Acc: 0.1425
+Epoch 22/35  Loss: 2.5267  Acc: 0.1430
+Epoch 23/35  Loss: 2.5097  Acc: 0.1425
+Epoch 24/35  Loss: 2.5156  Acc: 0.1446
+Epoch 25/35  Loss: 2.5186  Acc: 0.1446
+Epoch 26/35  Loss: 2.5105  Acc: 0.1456
+Epoch 27/35  Loss: 2.5117  Acc: 0.1471
+Epoch 28/35  Loss: 2.5151  Acc: 0.1322
+Epoch 29/35  Loss: 2.5238  Acc: 0.1353
+Epoch 30/35  Loss: 2.4940  Acc: 0.1451
+Epoch 31/35  Loss: 2.5021  Acc: 0.1415
+Epoch 32/35  Loss: 2.5142  Acc: 0.1420
+Epoch 33/35  Loss: 2.5185  Acc: 0.1363
+Epoch 34/35  Loss: 2.5099  Acc: 0.1451
+Epoch 35/35  Loss: 2.4933  Acc: 0.1554
+
+=== SimpleCNN analysis ===
+ACC: 0.18571428571428572| PREC: 0.10025510204081634| REC: 0.18571428571428572| F1: 0.11409055425448868

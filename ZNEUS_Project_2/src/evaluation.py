@@ -1,9 +1,9 @@
 import matplotlib.pyplot as plt
 import numpy as np
-import torch
+import wandb
 from sklearn.metrics import confusion_matrix, accuracy_score, precision_recall_fscore_support
 import seaborn as sns
-
+from model import *
 
 def get_metrics(model, loader, device=None):
 
@@ -86,5 +86,21 @@ def compare_models(results_dict):
     for name, (acc, prec, rec, f1) in results_dict.items():
         print(f"{name:12}  {acc:.4f}  {prec:.4f}  {rec:.4f}  {f1:.4f}")
 
-def evaluate_model(model, loader):
-    acc, prec, rec, f1, y_true, y_pred = get_metrics(model, loader)
+def evaluate_model(model, loader, device, cfg):
+
+    if isinstance(model, SimpleCNN):
+        print("\n=== SimpleCNN Analysis ===")
+    elif isinstance(model, DeepCNN):
+        print("\n=== DeepCNN Analysis ===")
+    else:
+        print("\n=== FENN Analysis ===")
+
+    acc, prec, rec, f1, y_true, y_pred = get_metrics(model, loader, device)
+    print(f"ACC: {acc}| PREC: {prec}| REC: {rec}| F1: {f1}")
+
+    wandb.log({"accuracy": acc,
+               "precision": prec,
+               "recall": rec,
+               "F1": f1})
+
+    confused_mat(y_true, y_pred, cfg['setup']['sport'])

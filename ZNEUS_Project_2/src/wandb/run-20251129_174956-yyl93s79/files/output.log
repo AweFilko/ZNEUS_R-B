@@ -1,0 +1,32 @@
+
+===twilight-universe-720_ResNet Train===
+Epoch 1/25  Train Loss: 4.9452  Acc: 0.2070 | Val Loss: 3.0731  Val Acc: 0.0714
+Epoch 2/25  Train Loss: 1.7795  Acc: 0.4347 | Val Loss: 3.8321  Val Acc: 0.0714
+Epoch 3/25  Train Loss: 1.4180  Acc: 0.5529 | Val Loss: 2.6496  Val Acc: 0.1429
+Epoch 4/25  Train Loss: 1.2037  Acc: 0.6200 | Val Loss: 3.2277  Val Acc: 0.0714
+Epoch 5/25  Train Loss: 1.0014  Acc: 0.6825 | Val Loss: 4.6453  Val Acc: 0.0714
+Epoch 6/25  Train Loss: 0.9196  Acc: 0.6995 | Val Loss: 2.9829  Val Acc: 0.1571
+Epoch 7/25  Train Loss: 0.7336  Acc: 0.7687 | Val Loss: 3.0819  Val Acc: 0.1429
+Epoch 8/25  Train Loss: 0.6163  Acc: 0.8023 | Val Loss: 3.3621  Val Acc: 0.1286
+Epoch 9/25  Train Loss: 0.5261  Acc: 0.8327 | Val Loss: 3.4277  Val Acc: 0.1429
+Epoch 10/25  Train Loss: 0.4265  Acc: 0.8658 | Val Loss: 3.7356  Val Acc: 0.1429
+Epoch 11/25  Train Loss: 0.4193  Acc: 0.8637 | Val Loss: 3.5781  Val Acc: 0.1286
+Epoch 12/25  Train Loss: 0.3882  Acc: 0.8715 | Val Loss: 3.5383  Val Acc: 0.1000
+Epoch 13/25  Train Loss: 0.3044  Acc: 0.9071 | Val Loss: 4.2267  Val Acc: 0.1143
+Epoch 14/25  Train Loss: 0.3069  Acc: 0.9035 | Val Loss: 3.9579  Val Acc: 0.1143
+Epoch 15/25  Train Loss: 0.2630  Acc: 0.9189 | Val Loss: 4.3842  Val Acc: 0.1286
+Epoch 16/25  Train Loss: 0.2367  Acc: 0.9308 | Val Loss: 4.4460  Val Acc: 0.0857
+Epoch 17/25  Train Loss: 0.2268  Acc: 0.9355 | Val Loss: 4.3414  Val Acc: 0.0857
+Epoch 18/25  Train Loss: 0.2078  Acc: 0.9355 | Val Loss: 4.1096  Val Acc: 0.1286
+Epoch 19/25  Train Loss: 0.1918  Acc: 0.9427 | Val Loss: 4.3173  Val Acc: 0.1000
+Epoch 20/25  Train Loss: 0.1929  Acc: 0.9458 | Val Loss: 4.1657  Val Acc: 0.1143
+Epoch 21/25  Train Loss: 0.1976  Acc: 0.9411 | Val Loss: 4.6162  Val Acc: 0.1000
+Epoch 22/25  Train Loss: 0.2016  Acc: 0.9422 | Val Loss: 4.4131  Val Acc: 0.1286
+Epoch 23/25  Train Loss: 0.1958  Acc: 0.9437 | Val Loss: 4.4375  Val Acc: 0.0857
+Epoch 24/25  Train Loss: 0.1861  Acc: 0.9489 | Val Loss: 4.4352  Val Acc: 0.1000
+Epoch 25/25  Train Loss: 0.1906  Acc: 0.9432 | Val Loss: 4.4050  Val Acc: 0.1143
+
+===twilight-universe-720_ResNet Analysis===
+
+=== FENN Analysis ===
+ACC: 0.11428571428571428| PREC: 0.059106098579782794| REC: 0.11428571428571428| F1: 0.06544323155618836

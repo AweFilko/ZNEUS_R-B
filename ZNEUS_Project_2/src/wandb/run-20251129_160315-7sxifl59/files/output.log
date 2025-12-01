@@ -1,0 +1,12 @@
+
+===honest-spaceship-714_ResNet Train===
+Epoch 1/5  Train Loss: 3.0345  Acc: 0.2003
+Epoch 2/5  Train Loss: 1.8292  Acc: 0.4125
+Epoch 3/5  Train Loss: 1.3916  Acc: 0.5638
+Epoch 4/5  Train Loss: 1.1844  Acc: 0.6329
+Epoch 5/5  Train Loss: 1.0895  Acc: 0.6582
+
+===honest-spaceship-714_ResNet Analysis===
+
+=== FENN Analysis ===
+ACC: 0.1| PREC: 0.017366562009419155| REC: 0.1| F1: 0.027582617746552174

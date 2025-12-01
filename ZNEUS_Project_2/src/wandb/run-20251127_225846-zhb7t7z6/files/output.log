@@ -1,0 +1,4 @@
+
+=== SimpleCNN Train ===
+Epoch 1/35  Loss: 4.1188  Acc: 0.1120
+Epoch 2/35  Loss: 2.2767  Acc: 0.2726

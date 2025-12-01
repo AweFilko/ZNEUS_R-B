@@ -1,0 +1,16 @@
+
+=== FENN Train ===
+Traceback (most recent call last):
+  File "C:\Users\filip\PycharmProjects\ZNEUS_R&B\ZNEUS_R-B\ZNEUS_Project_2\src\main.py", line 32, in <module>
+    trained_simple, hist_simple = train_model(simple, loader[1],loader[2], cfg)
+  File "C:\Users\filip\PycharmProjects\ZNEUS_R&B\ZNEUS_R-B\ZNEUS_Project_2\src\train.py", line 61, in train_model
+    loss = criterion(outputs, labels)
+  File "C:\Users\filip\miniconda3\envs\torch310\lib\site-packages\torch\nn\modules\module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "C:\Users\filip\miniconda3\envs\torch310\lib\site-packages\torch\nn\modules\module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "C:\Users\filip\miniconda3\envs\torch310\lib\site-packages\torch\nn\modules\loss.py", line 1293, in forward
+    return F.cross_entropy(
+  File "C:\Users\filip\miniconda3\envs\torch310\lib\site-packages\torch\nn\functional.py", line 3479, in cross_entropy
+    return torch._C._nn.cross_entropy_loss(
+RuntimeError: "nll_loss_forward_reduce_cuda_kernel_2d_index" not implemented for 'Double'

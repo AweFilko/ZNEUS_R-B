@@ -1,0 +1,11 @@
+{"time":"2025-11-28T16:57:22.6154057+01:00","level":"INFO","msg":"stream: starting","core version":"0.23.0"}
+{"time":"2025-11-28T16:57:22.9463257+01:00","level":"INFO","msg":"stream: created new stream","id":"czui4anj"}
+{"time":"2025-11-28T16:57:22.9463257+01:00","level":"INFO","msg":"handler: started","stream_id":"czui4anj"}
+{"time":"2025-11-28T16:57:22.9470217+01:00","level":"INFO","msg":"stream: started","id":"czui4anj"}
+{"time":"2025-11-28T16:57:22.9470217+01:00","level":"INFO","msg":"writer: started","stream_id":"czui4anj"}
+{"time":"2025-11-28T16:57:22.9470217+01:00","level":"INFO","msg":"sender: started","stream_id":"czui4anj"}
+{"time":"2025-11-28T16:59:19.5821313+01:00","level":"INFO","msg":"stream: closing","id":"czui4anj"}
+{"time":"2025-11-28T16:59:20.2388692+01:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-11-28T16:59:20.5480492+01:00","level":"INFO","msg":"handler: closed","stream_id":"czui4anj"}
+{"time":"2025-11-28T16:59:20.5515918+01:00","level":"INFO","msg":"sender: closed","stream_id":"czui4anj"}
+{"time":"2025-11-28T16:59:20.5515918+01:00","level":"INFO","msg":"stream: closed","id":"czui4anj"}

@@ -1,0 +1,6 @@
+
+=== FENN Train ===
+Epoch 1/1  Train Loss: 14.3236  Acc: 0.0883 | Val Loss: 4.8330  Val Acc: 0.0714
+
+=== FENN Analysis ===
+ACC: 0.1| PREC: 0.08353683353683354| REC: 0.1| F1: 0.04385256927629808

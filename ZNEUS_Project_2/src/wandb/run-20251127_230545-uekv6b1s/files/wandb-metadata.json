@@ -1,0 +1,40 @@
+{
+  "os": "Windows-10-10.0.26100-SP0",
+  "python": "CPython 3.10.19",
+  "startedAt": "2025-11-27T22:05:45.565766Z",
+  "program": "C:\\Users\\filip\\PycharmProjects\\ZNEUS_R&B\\ZNEUS_R-B\\ZNEUS_Project_2\\src\\main.py",
+  "codePath": "ZNEUS_Project_2\\src\\main.py",
+  "codePathLocal": "main.py",
+  "git": {
+    "remote": "https://github.com/AweFilko/ZNEUS_R-B.git",
+    "commit": "5e9f8b39c0fa6a4051351077bef53fdc25f78d29"
+  },
+  "email": "xbrutovskyf@stuba.sk",
+  "root": "C:\\Users\\filip\\PycharmProjects\\ZNEUS_R&B\\ZNEUS_R-B\\ZNEUS_Project_2\\src",
+  "host": "Filkos_asus",
+  "executable": "C:\\Users\\filip\\miniconda3\\envs\\torch310\\python.exe",
+  "cpu_count": 8,
+  "cpu_count_logical": 16,
+  "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+  "gpu_count": 1,
+  "disk": {
+    "/": {
+      "total": "992645287936",
+      "used": "290671591424"
+    }
+  },
+  "memory": {
+    "total": "16989720576"
+  },
+  "gpu_nvidia": [
+    {
+      "name": "NVIDIA GeForce RTX 4060 Laptop GPU",
+      "memoryTotal": "8585740288",
+      "cudaCores": 3072,
+      "architecture": "Ada",
+      "uuid": "GPU-43342d86-3910-0c29-c9cc-c51a9197e525"
+    }
+  ],
+  "cudaVersion": "13.0",
+  "writerId": "5u4zqoys549vwo6rsdz8eqj68wfdtceq"
+}

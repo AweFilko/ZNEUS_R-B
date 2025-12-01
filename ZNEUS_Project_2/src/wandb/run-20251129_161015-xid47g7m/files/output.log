@@ -1,0 +1,12 @@
+
+===helpful-eon-715_DeepCNN Train===
+Epoch 1/5  Train Loss: 2.1423  Acc: 0.3082
+Epoch 2/5  Train Loss: 1.5652  Acc: 0.4956
+Epoch 3/5  Train Loss: 1.3363  Acc: 0.5746
+Epoch 4/5  Train Loss: 1.1863  Acc: 0.6226
+Epoch 5/5  Train Loss: 1.0732  Acc: 0.6572
+
+===helpful-eon-715_DeepCNN Analysis===
+
+=== DeepCNN Analysis ===
+ACC: 0.07142857142857142| PREC: 0.00510204081632653| REC: 0.07142857142857142| F1: 0.009523809523809523

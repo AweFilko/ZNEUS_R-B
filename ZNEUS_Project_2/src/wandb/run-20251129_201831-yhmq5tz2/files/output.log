@@ -1,0 +1,8 @@
+
+===scarlet-wave-726_FENN Train===
+Epoch 1/1  Train Loss: 2.1837  Acc: 0.3206 | Val Loss: 2.7162  Val Acc: 0.1143
+
+===scarlet-wave-726_FENN Analysis===
+
+=== FENN Analysis ===
+ACC: 0.11428571428571428| PREC: 0.031632653061224494| REC: 0.11428571428571428| F1: 0.04393939393939394

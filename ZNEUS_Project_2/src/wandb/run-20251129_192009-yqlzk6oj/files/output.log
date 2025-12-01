@@ -1,0 +1,32 @@
+
+===dandy-feather-723_ResNet Train===
+Epoch 1/25  Train Loss: 3.1635  Acc: 0.2055 | Val Loss: 2.4605  Val Acc: 0.1286
+Epoch 2/25  Train Loss: 1.7233  Acc: 0.4497 | Val Loss: 1.6188  Val Acc: 0.5286
+Epoch 3/25  Train Loss: 1.2986  Acc: 0.5854 | Val Loss: 1.0169  Val Acc: 0.6429
+Epoch 4/25  Train Loss: 1.0568  Acc: 0.6753 | Val Loss: 1.1023  Val Acc: 0.6143
+Epoch 5/25  Train Loss: 0.9823  Acc: 0.6985 | Val Loss: 0.9891  Val Acc: 0.6857
+Epoch 6/25  Train Loss: 0.8852  Acc: 0.7202 | Val Loss: 0.8619  Val Acc: 0.7286
+Epoch 7/25  Train Loss: 0.8628  Acc: 0.7192 | Val Loss: 0.8482  Val Acc: 0.7286
+Epoch 8/25  Train Loss: 0.7500  Acc: 0.7532 | Val Loss: 0.8893  Val Acc: 0.7286
+Epoch 9/25  Train Loss: 0.6792  Acc: 0.7863 | Val Loss: 0.9538  Val Acc: 0.6571
+Epoch 10/25  Train Loss: 0.6969  Acc: 0.7852 | Val Loss: 0.6918  Val Acc: 0.8000
+Epoch 11/25  Train Loss: 0.5773  Acc: 0.8157 | Val Loss: 0.7382  Val Acc: 0.7429
+Epoch 12/25  Train Loss: 0.5570  Acc: 0.8224 | Val Loss: 0.7397  Val Acc: 0.7429
+Epoch 13/25  Train Loss: 0.5038  Acc: 0.8363 | Val Loss: 0.6625  Val Acc: 0.7714
+Epoch 14/25  Train Loss: 0.4282  Acc: 0.8730 | Val Loss: 0.7186  Val Acc: 0.7857
+Epoch 15/25  Train Loss: 0.4088  Acc: 0.8761 | Val Loss: 0.6792  Val Acc: 0.8143
+Epoch 16/25  Train Loss: 0.3936  Acc: 0.8818 | Val Loss: 0.7250  Val Acc: 0.8143
+Epoch 17/25  Train Loss: 0.3709  Acc: 0.8813 | Val Loss: 0.6629  Val Acc: 0.7714
+Epoch 18/25  Train Loss: 0.3381  Acc: 0.8962 | Val Loss: 0.6215  Val Acc: 0.8286
+Epoch 19/25  Train Loss: 0.3193  Acc: 0.9097 | Val Loss: 0.6022  Val Acc: 0.7571
+Epoch 20/25  Train Loss: 0.2934  Acc: 0.9122 | Val Loss: 0.6929  Val Acc: 0.7714
+Epoch 21/25  Train Loss: 0.2700  Acc: 0.9220 | Val Loss: 0.5343  Val Acc: 0.8429
+Epoch 22/25  Train Loss: 0.2446  Acc: 0.9303 | Val Loss: 0.6425  Val Acc: 0.7714
+Epoch 23/25  Train Loss: 0.2497  Acc: 0.9319 | Val Loss: 0.6065  Val Acc: 0.8143
+Epoch 24/25  Train Loss: 0.2410  Acc: 0.9350 | Val Loss: 0.5869  Val Acc: 0.8000
+Epoch 25/25  Train Loss: 0.2160  Acc: 0.9411 | Val Loss: 0.5740  Val Acc: 0.7857
+
+===dandy-feather-723_ResNet Analysis===
+
+=== FENN Analysis ===
+ACC: 0.7857142857142857| PREC: 0.7886054421768707| REC: 0.7857142857142857| F1: 0.7744588744588745

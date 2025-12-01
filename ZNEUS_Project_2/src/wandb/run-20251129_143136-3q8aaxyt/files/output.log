@@ -1,0 +1,12 @@
+
+===icy-sun-710_FENN Train===
+Epoch 1/5  Train Loss: 2.5635  Acc: 0.1347
+Epoch 2/5  Train Loss: 2.2300  Acc: 0.3154
+Epoch 3/5  Train Loss: 2.0490  Acc: 0.3913
+Epoch 4/5  Train Loss: 1.9091  Acc: 0.4595
+Epoch 5/5  Train Loss: 1.7841  Acc: 0.5194
+
+===icy-sun-710_FENN Analysis===
+
+=== FENN Analysis ===
+ACC: 0.2857142857142857| PREC: 0.3361111111111111| REC: 0.2857142857142857| F1: 0.24956444521661914

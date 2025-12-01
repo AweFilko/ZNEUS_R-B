@@ -1,0 +1,17 @@
+
+=== FENN Train ===
+Traceback (most recent call last):
+  File "C:\Users\filip\PycharmProjects\ZNEUS_R&B\ZNEUS_R-B\ZNEUS_Project_2\src\main.py", line 32, in <module>
+    trained_simple, hist_simple = train_model(simple, loader[1],loader[2], cfg)
+  File "C:\Users\filip\PycharmProjects\ZNEUS_R&B\ZNEUS_R-B\ZNEUS_Project_2\src\train.py", line 62, in train_model
+    loss.backward()
+  File "C:\Users\filip\miniconda3\envs\torch310\lib\site-packages\torch\_tensor.py", line 581, in backward
+    torch.autograd.backward(
+  File "C:\Users\filip\miniconda3\envs\torch310\lib\site-packages\torch\autograd\__init__.py", line 340, in backward
+    grad_tensors_ = _make_grads(tensors, grad_tensors_, is_grads_batched=False)
+  File "C:\Users\filip\miniconda3\envs\torch310\lib\site-packages\torch\autograd\__init__.py", line 220, in _make_grads
+    torch.ones_like(out, memory_format=torch.preserve_format)
+RuntimeError: CUDA error: device-side assert triggered
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.

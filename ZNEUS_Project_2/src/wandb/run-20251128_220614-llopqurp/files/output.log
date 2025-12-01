@@ -1,0 +1,8 @@
+
+=== FENN Train ===
+Traceback (most recent call last):
+  File "C:\Users\filip\PycharmProjects\ZNEUS_R&B\ZNEUS_R-B\ZNEUS_Project_2\src\main.py", line 32, in <module>
+    trained_model, hist_model = train_model(model, loader[1], cfg)
+  File "C:\Users\filip\PycharmProjects\ZNEUS_R&B\ZNEUS_R-B\ZNEUS_Project_2\src\train.py", line 30, in train_model
+    num_epochs = int(cfg['model_hyperparams']["epochs"])
+TypeError: 'NoneType' object is not subscriptable

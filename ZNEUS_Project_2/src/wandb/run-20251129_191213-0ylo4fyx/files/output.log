@@ -1,0 +1,32 @@
+
+===earthy-shape-722_DeepCNN Train===
+Epoch 1/25  Train Loss: 3.1671  Acc: 0.2024 | Val Loss: 2.1186  Val Acc: 0.2571
+Epoch 2/25  Train Loss: 2.0401  Acc: 0.3268 | Val Loss: 1.7846  Val Acc: 0.4571
+Epoch 3/25  Train Loss: 1.7933  Acc: 0.4115 | Val Loss: 1.5338  Val Acc: 0.5000
+Epoch 4/25  Train Loss: 1.5587  Acc: 0.4925 | Val Loss: 1.3150  Val Acc: 0.6143
+Epoch 5/25  Train Loss: 1.4237  Acc: 0.5338 | Val Loss: 1.3099  Val Acc: 0.5571
+Epoch 6/25  Train Loss: 1.3312  Acc: 0.5689 | Val Loss: 1.2282  Val Acc: 0.6429
+Epoch 7/25  Train Loss: 1.1948  Acc: 0.6159 | Val Loss: 1.0196  Val Acc: 0.7286
+Epoch 8/25  Train Loss: 1.1447  Acc: 0.6427 | Val Loss: 1.1517  Val Acc: 0.7000
+Epoch 9/25  Train Loss: 1.1162  Acc: 0.6489 | Val Loss: 1.1496  Val Acc: 0.6857
+Epoch 10/25  Train Loss: 1.0362  Acc: 0.6696 | Val Loss: 1.0959  Val Acc: 0.6429
+Epoch 11/25  Train Loss: 0.8665  Acc: 0.7083 | Val Loss: 0.8409  Val Acc: 0.7571
+Epoch 12/25  Train Loss: 0.7996  Acc: 0.7321 | Val Loss: 0.8366  Val Acc: 0.6857
+Epoch 13/25  Train Loss: 0.7572  Acc: 0.7501 | Val Loss: 0.7126  Val Acc: 0.7857
+Epoch 14/25  Train Loss: 0.7086  Acc: 0.7512 | Val Loss: 0.7787  Val Acc: 0.7571
+Epoch 15/25  Train Loss: 0.7046  Acc: 0.7796 | Val Loss: 0.7221  Val Acc: 0.7857
+Epoch 16/25  Train Loss: 0.6672  Acc: 0.7878 | Val Loss: 0.7599  Val Acc: 0.7429
+Epoch 17/25  Train Loss: 0.6002  Acc: 0.7997 | Val Loss: 0.6913  Val Acc: 0.7286
+Epoch 18/25  Train Loss: 0.5693  Acc: 0.8090 | Val Loss: 0.6067  Val Acc: 0.7714
+Epoch 19/25  Train Loss: 0.5240  Acc: 0.8229 | Val Loss: 0.6020  Val Acc: 0.7571
+Epoch 20/25  Train Loss: 0.5222  Acc: 0.8271 | Val Loss: 0.6012  Val Acc: 0.8000
+Epoch 21/25  Train Loss: 0.5095  Acc: 0.8245 | Val Loss: 0.6074  Val Acc: 0.8000
+Epoch 22/25  Train Loss: 0.4909  Acc: 0.8343 | Val Loss: 0.5591  Val Acc: 0.7857
+Epoch 23/25  Train Loss: 0.5171  Acc: 0.8198 | Val Loss: 0.6359  Val Acc: 0.7857
+Epoch 24/25  Train Loss: 0.4733  Acc: 0.8431 | Val Loss: 0.6282  Val Acc: 0.7857
+Epoch 25/25  Train Loss: 0.4640  Acc: 0.8436 | Val Loss: 0.6417  Val Acc: 0.8000
+
+===earthy-shape-722_DeepCNN Analysis===
+
+=== DeepCNN Analysis ===
+ACC: 0.8| PREC: 0.8558956916099772| REC: 0.8| F1: 0.7951092558235416

@@ -1,0 +1,8 @@
+
+===worthy-dragon-718_SimpleCNN Train===
+Epoch 1/1  Train Loss: 3.3953  Acc: 0.1549
+
+===worthy-dragon-718_SimpleCNN Analysis===
+
+=== SimpleCNN Analysis ===
+ACC: 0.11428571428571428| PREC: 0.030129551820728295| REC: 0.11428571428571428| F1: 0.040749816221514336

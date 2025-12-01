@@ -1,0 +1,25 @@
+
+=== FENN Train ===
+Epoch 1/20  Train Loss: 2.9508  Acc: 0.0888
+Epoch 2/20  Train Loss: 2.6266  Acc: 0.0991
+Epoch 3/20  Train Loss: 2.5464  Acc: 0.1564
+Epoch 4/20  Train Loss: 2.4308  Acc: 0.2050
+Epoch 5/20  Train Loss: 2.3077  Acc: 0.2592
+Epoch 6/20  Train Loss: 2.2157  Acc: 0.2628
+Epoch 7/20  Train Loss: 2.1029  Acc: 0.2912
+Epoch 8/20  Train Loss: 1.9670  Acc: 0.3505
+Epoch 9/20  Train Loss: 1.9390  Acc: 0.3557
+Epoch 10/20  Train Loss: 1.7843  Acc: 0.4192
+Epoch 11/20  Train Loss: 1.7275  Acc: 0.4399
+Epoch 12/20  Train Loss: 1.6889  Acc: 0.4244
+Epoch 13/20  Train Loss: 1.6098  Acc: 0.4646
+Epoch 14/20  Train Loss: 1.5509  Acc: 0.4972
+Epoch 15/20  Train Loss: 1.5011  Acc: 0.5132
+Epoch 16/20  Train Loss: 1.5479  Acc: 0.4755
+Epoch 17/20  Train Loss: 1.4201  Acc: 0.5297
+Epoch 18/20  Train Loss: 1.2936  Acc: 0.5875
+Epoch 19/20  Train Loss: 1.3756  Acc: 0.5297
+Epoch 20/20  Train Loss: 1.3257  Acc: 0.5674
+
+=== FENN Analysis ===
+ACC: 0.3142857142857143| PREC: 0.354037629037629| REC: 0.3142857142857143| F1: 0.26884920634920634

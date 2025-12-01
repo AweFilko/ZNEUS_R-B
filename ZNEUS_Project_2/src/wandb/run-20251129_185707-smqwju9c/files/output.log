@@ -1,0 +1,32 @@
+
+===royal-microwave-721_DeepCNN Train===
+Epoch 1/25  Train Loss: 2.8773  Acc: 0.2654 | Val Loss: 2.6775  Val Acc: 0.0857
+Epoch 2/25  Train Loss: 1.7826  Acc: 0.4352 | Val Loss: 3.6699  Val Acc: 0.1000
+Epoch 3/25  Train Loss: 1.5220  Acc: 0.5059 | Val Loss: 4.8407  Val Acc: 0.1000
+Epoch 4/25  Train Loss: 1.3281  Acc: 0.5777 | Val Loss: 3.5376  Val Acc: 0.1143
+Epoch 5/25  Train Loss: 1.1303  Acc: 0.6412 | Val Loss: 5.6749  Val Acc: 0.1000
+Epoch 6/25  Train Loss: 1.0032  Acc: 0.6567 | Val Loss: 5.5436  Val Acc: 0.0714
+Epoch 7/25  Train Loss: 0.8739  Acc: 0.7181 | Val Loss: 4.8503  Val Acc: 0.1000
+Epoch 8/25  Train Loss: 0.8239  Acc: 0.7357 | Val Loss: 4.6743  Val Acc: 0.1143
+Epoch 9/25  Train Loss: 0.7417  Acc: 0.7553 | Val Loss: 4.9959  Val Acc: 0.1000
+Epoch 10/25  Train Loss: 0.7117  Acc: 0.7599 | Val Loss: 4.6033  Val Acc: 0.1429
+Epoch 11/25  Train Loss: 0.6077  Acc: 0.7992 | Val Loss: 4.9065  Val Acc: 0.1571
+Epoch 12/25  Train Loss: 0.6071  Acc: 0.8023 | Val Loss: 5.7435  Val Acc: 0.1143
+Epoch 13/25  Train Loss: 0.5660  Acc: 0.8090 | Val Loss: 5.4818  Val Acc: 0.0857
+Epoch 14/25  Train Loss: 0.5557  Acc: 0.8240 | Val Loss: 5.2939  Val Acc: 0.1286
+Epoch 15/25  Train Loss: 0.5436  Acc: 0.8141 | Val Loss: 5.0560  Val Acc: 0.1000
+Epoch 16/25  Train Loss: 0.5264  Acc: 0.8389 | Val Loss: 5.2734  Val Acc: 0.1000
+Epoch 17/25  Train Loss: 0.5254  Acc: 0.8301 | Val Loss: 5.4614  Val Acc: 0.0857
+Epoch 18/25  Train Loss: 0.4948  Acc: 0.8332 | Val Loss: 5.1588  Val Acc: 0.1000
+Epoch 19/25  Train Loss: 0.5057  Acc: 0.8322 | Val Loss: 4.8383  Val Acc: 0.1571
+Epoch 20/25  Train Loss: 0.5014  Acc: 0.8358 | Val Loss: 4.9661  Val Acc: 0.1429
+Epoch 21/25  Train Loss: 0.4931  Acc: 0.8338 | Val Loss: 5.4165  Val Acc: 0.1000
+Epoch 22/25  Train Loss: 0.4708  Acc: 0.8456 | Val Loss: 5.1508  Val Acc: 0.1143
+Epoch 23/25  Train Loss: 0.4772  Acc: 0.8436 | Val Loss: 5.2302  Val Acc: 0.1143
+Epoch 24/25  Train Loss: 0.4890  Acc: 0.8493 | Val Loss: 5.0160  Val Acc: 0.1143
+Epoch 25/25  Train Loss: 0.4885  Acc: 0.8400 | Val Loss: 5.2162  Val Acc: 0.1143
+
+===royal-microwave-721_DeepCNN Analysis===
+
+=== DeepCNN Analysis ===
+ACC: 0.11428571428571428| PREC: 0.049783549783549784| REC: 0.11428571428571428| F1: 0.04483763948929326

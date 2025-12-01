@@ -1,0 +1,47 @@
+
+===denim-voice-724_DeepCNN Train===
+Epoch 1/40  Train Loss: 2.4373  Acc: 0.2633 | Val Loss: 1.7228  Val Acc: 0.4143
+Epoch 2/40  Train Loss: 1.9861  Acc: 0.3469 | Val Loss: 1.7715  Val Acc: 0.3571
+Epoch 3/40  Train Loss: 1.7941  Acc: 0.4316 | Val Loss: 1.5099  Val Acc: 0.5143
+Epoch 4/40  Train Loss: 1.6236  Acc: 0.4801 | Val Loss: 1.4108  Val Acc: 0.5571
+Epoch 5/40  Train Loss: 1.5056  Acc: 0.5101 | Val Loss: 1.2818  Val Acc: 0.6000
+Epoch 6/40  Train Loss: 1.3977  Acc: 0.5374 | Val Loss: 1.0183  Val Acc: 0.7143
+Epoch 7/40  Train Loss: 1.2986  Acc: 0.5777 | Val Loss: 1.0277  Val Acc: 0.6857
+Epoch 8/40  Train Loss: 1.2003  Acc: 0.6195 | Val Loss: 0.9737  Val Acc: 0.6571
+Epoch 9/40  Train Loss: 1.1520  Acc: 0.6288 | Val Loss: 0.9670  Val Acc: 0.6857
+Epoch 10/40  Train Loss: 1.1216  Acc: 0.6371 | Val Loss: 0.9262  Val Acc: 0.6571
+Epoch 11/40  Train Loss: 1.0755  Acc: 0.6582 | Val Loss: 0.9638  Val Acc: 0.6571
+Epoch 12/40  Train Loss: 1.0701  Acc: 0.6680 | Val Loss: 0.8106  Val Acc: 0.7000
+Epoch 13/40  Train Loss: 1.0287  Acc: 0.6696 | Val Loss: 0.8773  Val Acc: 0.7143
+Epoch 14/40  Train Loss: 0.8957  Acc: 0.7021 | Val Loss: 0.7307  Val Acc: 0.7571
+Epoch 15/40  Train Loss: 0.9181  Acc: 0.7099 | Val Loss: 0.9711  Val Acc: 0.7143
+Epoch 16/40  Train Loss: 0.9201  Acc: 0.7109 | Val Loss: 0.8350  Val Acc: 0.7286
+Epoch 17/40  Train Loss: 0.8797  Acc: 0.7161 | Val Loss: 0.9237  Val Acc: 0.7143
+Epoch 18/40  Train Loss: 0.7557  Acc: 0.7656 | Val Loss: 0.8102  Val Acc: 0.7286
+Epoch 19/40  Train Loss: 0.6764  Acc: 0.7796 | Val Loss: 0.8338  Val Acc: 0.7571
+Epoch 20/40  Train Loss: 0.7100  Acc: 0.7599 | Val Loss: 0.7596  Val Acc: 0.7714
+Epoch 21/40  Train Loss: 0.6016  Acc: 0.8054 | Val Loss: 0.7036  Val Acc: 0.8000
+Epoch 22/40  Train Loss: 0.5832  Acc: 0.8038 | Val Loss: 0.6664  Val Acc: 0.7857
+Epoch 23/40  Train Loss: 0.6054  Acc: 0.8012 | Val Loss: 0.6029  Val Acc: 0.8571
+Epoch 24/40  Train Loss: 0.5713  Acc: 0.8064 | Val Loss: 0.6344  Val Acc: 0.8000
+Epoch 25/40  Train Loss: 0.5402  Acc: 0.8162 | Val Loss: 0.7113  Val Acc: 0.7571
+Epoch 26/40  Train Loss: 0.5783  Acc: 0.8064 | Val Loss: 0.5544  Val Acc: 0.8286
+Epoch 27/40  Train Loss: 0.5362  Acc: 0.8188 | Val Loss: 0.6769  Val Acc: 0.7571
+Epoch 28/40  Train Loss: 0.5165  Acc: 0.8209 | Val Loss: 0.6403  Val Acc: 0.8000
+Epoch 29/40  Train Loss: 0.5353  Acc: 0.8240 | Val Loss: 0.5404  Val Acc: 0.8286
+Epoch 30/40  Train Loss: 0.5183  Acc: 0.8307 | Val Loss: 0.6663  Val Acc: 0.7429
+Epoch 31/40  Train Loss: 0.5180  Acc: 0.8265 | Val Loss: 0.6426  Val Acc: 0.7571
+Epoch 32/40  Train Loss: 0.5009  Acc: 0.8307 | Val Loss: 0.5935  Val Acc: 0.8000
+Epoch 33/40  Train Loss: 0.4501  Acc: 0.8503 | Val Loss: 0.6493  Val Acc: 0.8286
+Epoch 34/40  Train Loss: 0.4503  Acc: 0.8493 | Val Loss: 0.6354  Val Acc: 0.8286
+Epoch 35/40  Train Loss: 0.4125  Acc: 0.8549 | Val Loss: 0.6265  Val Acc: 0.7714
+Epoch 36/40  Train Loss: 0.4332  Acc: 0.8549 | Val Loss: 0.6380  Val Acc: 0.7857
+Epoch 37/40  Train Loss: 0.4031  Acc: 0.8658 | Val Loss: 0.6007  Val Acc: 0.8000
+Epoch 38/40  Train Loss: 0.4194  Acc: 0.8554 | Val Loss: 0.7089  Val Acc: 0.8000
+Epoch 39/40  Train Loss: 0.4170  Acc: 0.8637 | Val Loss: 0.6689  Val Acc: 0.7857
+Epoch 40/40  Train Loss: 0.3772  Acc: 0.8694 | Val Loss: 0.6366  Val Acc: 0.8143
+
+===denim-voice-724_DeepCNN Analysis===
+
+=== DeepCNN Analysis ===
+ACC: 0.8142857142857143| PREC: 0.8335034013605441| REC: 0.8142857142857143| F1: 0.8050298907441765

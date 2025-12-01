@@ -1,0 +1,17 @@
+{
+  "os": "Windows-10-10.0.26100-SP0",
+  "python": "CPython 3.10.19",
+  "startedAt": "2025-11-28T21:06:14.260120Z",
+  "program": "C:\\Users\\filip\\PycharmProjects\\ZNEUS_R&B\\ZNEUS_R-B\\ZNEUS_Project_2\\src\\main.py",
+  "codePath": "ZNEUS_Project_2\\src\\main.py",
+  "codePathLocal": "main.py",
+  "git": {
+    "remote": "https://github.com/AweFilko/ZNEUS_R-B.git",
+    "commit": "5e9f8b39c0fa6a4051351077bef53fdc25f78d29"
+  },
+  "email": "xbrutovskyf@stuba.sk",
+  "root": "C:\\Users\\filip\\PycharmProjects\\ZNEUS_R&B\\ZNEUS_R-B\\ZNEUS_Project_2\\src",
+  "host": "Filkos_asus",
+  "executable": "C:\\Users\\filip\\miniconda3\\envs\\torch310\\python.exe",
+  "writerId": "gfdlaogp5azep6rwjgczguy3rouxpamq"
+}

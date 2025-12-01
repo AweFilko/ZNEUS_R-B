@@ -1,0 +1,101 @@
+_wandb:
+    value:
+        cli_version: 0.23.0
+        e:
+            t49lciq3o9ad36y1zt23qb6ulk5zgrbv:
+                codePath: ZNEUS_Project_2\src\main.py
+                codePathLocal: main.py
+                cpu_count: 8
+                cpu_count_logical: 16
+                cudaVersion: "13.0"
+                disk:
+                    /:
+                        total: "992645287936"
+                        used: "292590616576"
+                email: xbrutovskyf@stuba.sk
+                executable: C:\Users\filip\miniconda3\envs\torch310\python.exe
+                git:
+                    commit: 5e9f8b39c0fa6a4051351077bef53fdc25f78d29
+                    remote: https://github.com/AweFilko/ZNEUS_R-B.git
+                gpu: NVIDIA GeForce RTX 4060 Laptop GPU
+                gpu_count: 1
+                gpu_nvidia:
+                    - architecture: Ada
+                      cudaCores: 3072
+                      memoryTotal: "8585740288"
+                      name: NVIDIA GeForce RTX 4060 Laptop GPU
+                      uuid: GPU-43342d86-3910-0c29-c9cc-c51a9197e525
+                host: Filkos_asus
+                memory:
+                    total: "16989720576"
+                os: Windows-10-10.0.26100-SP0
+                program: C:\Users\filip\PycharmProjects\ZNEUS_R&B\ZNEUS_R-B\ZNEUS_Project_2\src\main.py
+                python: CPython 3.10.19
+                root: C:\Users\filip\PycharmProjects\ZNEUS_R&B\ZNEUS_R-B\ZNEUS_Project_2\src
+                startedAt: "2025-11-29T18:12:13.440683Z"
+                writerId: t49lciq3o9ad36y1zt23qb6ulk5zgrbv
+        m: []
+        python_version: 3.10.19
+        t:
+            "1":
+                - 1
+                - 5
+                - 41
+                - 53
+            "2":
+                - 1
+                - 5
+                - 41
+                - 53
+            "3":
+                - 2
+                - 15
+                - 16
+                - 17
+            "4": 3.10.19
+            "5": 0.23.0
+            "8":
+                - 3
+            "12": 0.23.0
+            "13": windows-amd64
+model:
+    value: 1
+model_hyperparams:
+    value:
+        batch_size: 32
+        dropout: 0.25
+        epochs: 25
+        learning_rate: 0.001
+        weight_decay: "1e-4"
+setup:
+    value:
+        debug: false
+        device: cuda
+        df_file: sports.csv
+        img_size: (224,224)
+        sport:
+            - sumo wrestling
+            - water polo
+            - ski jumping
+            - chuckwagon racing
+            - cheerleading
+            - canoe slamon
+            - formula 1 racing
+            - fly fishing
+            - bungee jumping
+            - rock climbing
+            - pole dancing
+            - track bicycle
+            - hurdles
+            - uneven bars
+        transform:
+            color_jitter:
+                brightness: 0.1
+                contrast: 0.1
+                hue: 0.05
+                saturation: 0.1
+            horizontal_flip_prob: 0.2
+            normalization: true
+            random_rotation_degree: 15
+train:
+    value: 0

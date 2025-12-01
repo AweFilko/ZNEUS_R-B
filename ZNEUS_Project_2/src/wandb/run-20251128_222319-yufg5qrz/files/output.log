@@ -1,0 +1,16 @@
+
+=== FENN Train ===
+Epoch 1/50  Train Loss: 1.9808  Acc: 0.3511
+Epoch 2/50  Train Loss: 1.2507  Acc: 0.5922
+Epoch 3/50  Train Loss: 0.9226  Acc: 0.7016
+Epoch 4/50  Train Loss: 0.5508  Acc: 0.8188
+Epoch 5/50  Train Loss: 0.3022  Acc: 0.9086
+Epoch 6/50  Train Loss: 0.2336  Acc: 0.9288
+Epoch 7/50  Train Loss: 0.1277  Acc: 0.9618
+Epoch 8/50  Train Loss: 0.0826  Acc: 0.9757
+Epoch 9/50  Train Loss: 0.0850  Acc: 0.9809
+Epoch 10/50  Train Loss: 0.1094  Acc: 0.9690
+Epoch 11/50  Train Loss: 0.1198  Acc: 0.9608
+Epoch 12/50  Train Loss: 0.0906  Acc: 0.9726
+Epoch 13/50  Train Loss: 0.0622  Acc: 0.9830
+Epoch 14/50  Train Loss: 0.0610  Acc: 0.9804

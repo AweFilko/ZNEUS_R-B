@@ -1,0 +1,8 @@
+{"time":"2025-11-28T22:23:22.0202642+01:00","level":"INFO","msg":"stream: starting","core version":"0.23.0"}
+{"time":"2025-11-28T22:23:22.4651918+01:00","level":"INFO","msg":"stream: created new stream","id":"yufg5qrz"}
+{"time":"2025-11-28T22:23:22.4651918+01:00","level":"INFO","msg":"handler: started","stream_id":"yufg5qrz"}
+{"time":"2025-11-28T22:23:22.4663005+01:00","level":"INFO","msg":"sender: started","stream_id":"yufg5qrz"}
+{"time":"2025-11-28T22:23:22.4663005+01:00","level":"INFO","msg":"writer: started","stream_id":"yufg5qrz"}
+{"time":"2025-11-28T22:23:22.4657635+01:00","level":"INFO","msg":"stream: started","id":"yufg5qrz"}
+{"time":"2025-11-28T22:31:53.478589+01:00","level":"ERROR","msg":"HTTP error","status":404,"method":"POST","url":"https://api.wandb.ai/files/awefilko-fiit-stu/ZNEUS_R&B/yufg5qrz/file_stream"}
+{"time":"2025-11-28T22:31:53.478589+01:00","level":"ERROR+4","msg":"filestream: fatal error: filestream: failed to upload: 404 Not Found path=files/awefilko-fiit-stu/ZNEUS_R&B/yufg5qrz/file_stream: {\"error\":\"run ZNEUS_R\\u0026B/yufg5qrz not found while streaming file\"}"}

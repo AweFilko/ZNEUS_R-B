@@ -1,0 +1,32 @@
+
+===gallant-sea-727_FENN Train===
+Epoch 1/25  Train Loss: 2.1370  Acc: 0.3292 | Val Loss: 2.2745  Val Acc: 0.1875
+Epoch 2/25  Train Loss: 1.4766  Acc: 0.5828 | Val Loss: 2.3850  Val Acc: 0.2500
+Epoch 3/25  Train Loss: 1.0670  Acc: 0.7005 | Val Loss: 2.1394  Val Acc: 0.3125
+Epoch 4/25  Train Loss: 0.7345  Acc: 0.8214 | Val Loss: 3.9987  Val Acc: 0.2031
+Epoch 5/25  Train Loss: 0.5190  Acc: 0.8792 | Val Loss: 4.2891  Val Acc: 0.1719
+Epoch 6/25  Train Loss: 0.3625  Acc: 0.9339 | Val Loss: 3.7966  Val Acc: 0.1875
+Epoch 7/25  Train Loss: 0.2261  Acc: 0.9651 | Val Loss: 1.5597  Val Acc: 0.4844
+Epoch 8/25  Train Loss: 0.1506  Acc: 0.9818 | Val Loss: 2.9094  Val Acc: 0.3125
+Epoch 9/25  Train Loss: 0.1122  Acc: 0.9880 | Val Loss: 1.9759  Val Acc: 0.4531
+Epoch 10/25  Train Loss: 0.0899  Acc: 0.9948 | Val Loss: 1.9285  Val Acc: 0.4531
+Epoch 11/25  Train Loss: 0.0716  Acc: 0.9984 | Val Loss: 1.4781  Val Acc: 0.5469
+Epoch 12/25  Train Loss: 0.0662  Acc: 0.9958 | Val Loss: 1.3267  Val Acc: 0.5312
+Epoch 13/25  Train Loss: 0.0527  Acc: 0.9995 | Val Loss: 1.3261  Val Acc: 0.5156
+Epoch 14/25  Train Loss: 0.0498  Acc: 1.0000 | Val Loss: 1.2677  Val Acc: 0.5156
+Epoch 15/25  Train Loss: 0.0446  Acc: 0.9990 | Val Loss: 1.6189  Val Acc: 0.5156
+Epoch 16/25  Train Loss: 0.0403  Acc: 1.0000 | Val Loss: 1.1160  Val Acc: 0.5781
+Epoch 17/25  Train Loss: 0.0384  Acc: 0.9995 | Val Loss: 1.2495  Val Acc: 0.6406
+Epoch 18/25  Train Loss: 0.0349  Acc: 0.9995 | Val Loss: 1.2910  Val Acc: 0.5938
+Epoch 19/25  Train Loss: 0.0300  Acc: 1.0000 | Val Loss: 1.1410  Val Acc: 0.5938
+Epoch 20/25  Train Loss: 0.0278  Acc: 0.9990 | Val Loss: 1.1231  Val Acc: 0.6562
+Epoch 21/25  Train Loss: 0.0275  Acc: 0.9995 | Val Loss: 1.2239  Val Acc: 0.6250
+Epoch 22/25  Train Loss: 0.0292  Acc: 1.0000 | Val Loss: 1.0782  Val Acc: 0.6094
+Epoch 23/25  Train Loss: 0.0241  Acc: 1.0000 | Val Loss: 1.1484  Val Acc: 0.5938
+Epoch 24/25  Train Loss: 0.0272  Acc: 0.9990 | Val Loss: 1.1431  Val Acc: 0.5938
+Epoch 25/25  Train Loss: 0.0213  Acc: 1.0000 | Val Loss: 1.1985  Val Acc: 0.6250
+
+===gallant-sea-727_FENN Analysis===
+
+=== FENN Analysis ===
+ACC: 0.625| PREC: 0.7439856150793651| REC: 0.625| F1: 0.6432787698412699

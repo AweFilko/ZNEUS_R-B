@@ -1,0 +1,32 @@
+
+===fragrant-plasma-717_ResNet Train===
+Epoch 1/25  Train Loss: 10.8175  Acc: 0.1322 | Val Loss: 2.6561  Val Acc: 0.0714
+Epoch 2/25  Train Loss: 2.5577  Acc: 0.1910 | Val Loss: 2.5903  Val Acc: 0.1286
+Epoch 3/25  Train Loss: 2.2878  Acc: 0.2679 | Val Loss: 2.5628  Val Acc: 0.1286
+Epoch 4/25  Train Loss: 2.0790  Acc: 0.3273 | Val Loss: 2.5791  Val Acc: 0.1000
+Epoch 5/25  Train Loss: 2.0130  Acc: 0.3753 | Val Loss: 2.5870  Val Acc: 0.1571
+Epoch 6/25  Train Loss: 1.8564  Acc: 0.4073 | Val Loss: 2.5782  Val Acc: 0.1286
+Epoch 7/25  Train Loss: 1.7957  Acc: 0.4125 | Val Loss: 2.5214  Val Acc: 0.1571
+Epoch 8/25  Train Loss: 1.7414  Acc: 0.4543 | Val Loss: 2.6065  Val Acc: 0.2286
+Epoch 9/25  Train Loss: 1.5997  Acc: 0.4946 | Val Loss: 2.8315  Val Acc: 0.2000
+Epoch 10/25  Train Loss: 1.4830  Acc: 0.5256 | Val Loss: 2.4511  Val Acc: 0.2143
+Epoch 11/25  Train Loss: 1.4405  Acc: 0.5441 | Val Loss: 2.8354  Val Acc: 0.1571
+Epoch 12/25  Train Loss: 1.3469  Acc: 0.5586 | Val Loss: 3.3336  Val Acc: 0.1000
+Epoch 13/25  Train Loss: 1.2456  Acc: 0.5973 | Val Loss: 3.2098  Val Acc: 0.1286
+Epoch 14/25  Train Loss: 1.2148  Acc: 0.6231 | Val Loss: 3.1037  Val Acc: 0.1000
+Epoch 15/25  Train Loss: 1.1423  Acc: 0.6345 | Val Loss: 3.2387  Val Acc: 0.1000
+Epoch 16/25  Train Loss: 1.0907  Acc: 0.6588 | Val Loss: 3.3237  Val Acc: 0.1143
+Epoch 17/25  Train Loss: 1.0470  Acc: 0.6644 | Val Loss: 3.6834  Val Acc: 0.1143
+Epoch 18/25  Train Loss: 1.0224  Acc: 0.6706 | Val Loss: 3.3897  Val Acc: 0.1143
+Epoch 19/25  Train Loss: 0.9929  Acc: 0.6866 | Val Loss: 3.5560  Val Acc: 0.1143
+Epoch 20/25  Train Loss: 0.9628  Acc: 0.6944 | Val Loss: 3.5817  Val Acc: 0.1000
+Epoch 21/25  Train Loss: 0.9307  Acc: 0.6985 | Val Loss: 3.7616  Val Acc: 0.1000
+Epoch 22/25  Train Loss: 0.9198  Acc: 0.7186 | Val Loss: 3.5367  Val Acc: 0.1143
+Epoch 23/25  Train Loss: 0.9008  Acc: 0.7176 | Val Loss: 3.6661  Val Acc: 0.1143
+Epoch 24/25  Train Loss: 0.8971  Acc: 0.7238 | Val Loss: 3.6650  Val Acc: 0.1143
+Epoch 25/25  Train Loss: 0.8979  Acc: 0.7238 | Val Loss: 3.9044  Val Acc: 0.1000
+
+===fragrant-plasma-717_ResNet Analysis===
+
+=== FENN Analysis ===
+ACC: 0.1| PREC: 0.015064935064935068| REC: 0.1| F1: 0.025947521865889212

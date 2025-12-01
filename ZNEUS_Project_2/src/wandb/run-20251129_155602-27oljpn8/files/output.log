@@ -1,0 +1,12 @@
+
+===dainty-armadillo-713_FENN Train===
+Epoch 1/5  Train Loss: 2.5727  Acc: 0.1296
+Epoch 2/5  Train Loss: 2.2513  Acc: 0.2907
+Epoch 3/5  Train Loss: 2.0605  Acc: 0.3965
+Epoch 4/5  Train Loss: 1.9169  Acc: 0.4610
+Epoch 5/5  Train Loss: 1.7802  Acc: 0.5085
+
+===dainty-armadillo-713_FENN Analysis===
+
+=== FENN Analysis ===
+ACC: 0.3142857142857143| PREC: 0.3604475881261595| REC: 0.3142857142857143| F1: 0.2806372549019608

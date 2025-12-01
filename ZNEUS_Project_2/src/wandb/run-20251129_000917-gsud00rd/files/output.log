@@ -1,0 +1,20 @@
+
+=== FENN Train ===
+Epoch 1/15  Train Loss: 2.5503  Acc: 0.1704
+Epoch 2/15  Train Loss: 2.2444  Acc: 0.3098
+Epoch 3/15  Train Loss: 2.0610  Acc: 0.3810
+Epoch 4/15  Train Loss: 1.9264  Acc: 0.4461
+Epoch 5/15  Train Loss: 1.7810  Acc: 0.5054
+Epoch 6/15  Train Loss: 1.6900  Acc: 0.5467
+Epoch 7/15  Train Loss: 1.5678  Acc: 0.5906
+Epoch 8/15  Train Loss: 1.4633  Acc: 0.6469
+Epoch 9/15  Train Loss: 1.3702  Acc: 0.6897
+Epoch 10/15  Train Loss: 1.2780  Acc: 0.7321
+Epoch 11/15  Train Loss: 1.1781  Acc: 0.7620
+Epoch 12/15  Train Loss: 1.1004  Acc: 0.7785
+Epoch 13/15  Train Loss: 1.0035  Acc: 0.8353
+Epoch 14/15  Train Loss: 0.9290  Acc: 0.8467
+Epoch 15/15  Train Loss: 0.8538  Acc: 0.8601
+
+=== FENN Analysis ===
+ACC: 0.45714285714285713| PREC: 0.4914264828738512| REC: 0.45714285714285713| F1: 0.41131606488749345

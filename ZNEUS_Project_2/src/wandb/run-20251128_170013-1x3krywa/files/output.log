@@ -1,0 +1,12 @@
+
+=== FENN Train ===
+Epoch 1/1  Train Loss: 11.8269  Acc: 0.1322 | Val Loss: 11.4848  Val Acc: 0.0429
+
+=== FENN Analysis ===
+ACC: 0.04285714285714286| PREC: 0.003968253968253968| REC: 0.04285714285714286| F1: 0.007263922518159806
+Traceback (most recent call last):
+  File "C:\Users\filip\PycharmProjects\ZNEUS_R&B\ZNEUS_R-B\ZNEUS_Project_2\src\main.py", line 31, in <module>
+    evaluate_model(trained_simple, loader[2], device, cfg)
+  File "C:\Users\filip\PycharmProjects\ZNEUS_R&B\ZNEUS_R-B\ZNEUS_Project_2\src\evaluation.py", line 109, in evaluate_model
+    confused_mat(y_true, y_pred, cfg['setup']['sports'])
+KeyError: 'sports'
