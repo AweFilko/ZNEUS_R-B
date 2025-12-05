@@ -1,0 +1,22 @@
+
+===clear-oath-728_FENN Train===
+Epoch 1/15  Train Loss: 2.1366  Acc: 0.3234
+Epoch 2/15  Train Loss: 1.4891  Acc: 0.5672
+Epoch 3/15  Train Loss: 1.0687  Acc: 0.7234
+Epoch 4/15  Train Loss: 0.7564  Acc: 0.8240
+Epoch 5/15  Train Loss: 0.5039  Acc: 0.8927
+Epoch 6/15  Train Loss: 0.3644  Acc: 0.9297
+Epoch 7/15  Train Loss: 0.2455  Acc: 0.9563
+Epoch 8/15  Train Loss: 0.2008  Acc: 0.9656
+Epoch 9/15  Train Loss: 0.1491  Acc: 0.9750
+Epoch 10/15  Train Loss: 0.1210  Acc: 0.9802
+Epoch 11/15  Train Loss: 0.0899  Acc: 0.9865
+Epoch 12/15  Train Loss: 0.0595  Acc: 0.9958
+Epoch 13/15  Train Loss: 0.0534  Acc: 0.9948
+Epoch 14/15  Train Loss: 0.0472  Acc: 0.9953
+Epoch 15/15  Train Loss: 0.0528  Acc: 0.9932
+
+===clear-oath-728_FENN Analysis===
+
+=== FENN Analysis ===
+ACC: 0.125| PREC: 0.1238082627118644| REC: 0.125| F1: 0.0729709201388889

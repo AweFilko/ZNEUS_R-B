@@ -1,0 +1,22 @@
+
+===pretty-wildflower-729_SCNN Train===
+Epoch 1/15  Train Loss: 2.2314  Acc: 0.2974
+Epoch 2/15  Train Loss: 1.6001  Acc: 0.4906
+Epoch 3/15  Train Loss: 1.2982  Acc: 0.5974
+Epoch 4/15  Train Loss: 1.0764  Acc: 0.6646
+Epoch 5/15  Train Loss: 0.8805  Acc: 0.7328
+Epoch 6/15  Train Loss: 0.7795  Acc: 0.7474
+Epoch 7/15  Train Loss: 0.6249  Acc: 0.8005
+Epoch 8/15  Train Loss: 0.5466  Acc: 0.8302
+Epoch 9/15  Train Loss: 0.4847  Acc: 0.8526
+Epoch 10/15  Train Loss: 0.4010  Acc: 0.8714
+Epoch 11/15  Train Loss: 0.3538  Acc: 0.8875
+Epoch 12/15  Train Loss: 0.3097  Acc: 0.9031
+Epoch 13/15  Train Loss: 0.3144  Acc: 0.8964
+Epoch 14/15  Train Loss: 0.2714  Acc: 0.9115
+Epoch 15/15  Train Loss: 0.2589  Acc: 0.9208
+
+===pretty-wildflower-729_SCNN Analysis===
+
+=== SimpleCNN Analysis ===
+ACC: 0.65625| PREC: 0.6920572916666666| REC: 0.65625| F1: 0.6556104485791985

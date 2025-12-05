@@ -5,13 +5,13 @@ import torch.nn.functional as F
 def get_original_name(model):
     return model.__class__.__name__
 
-class SimpleCNN(nn.Module):
+class SCNN(nn.Module):
     def __init__(self, num_classes, cfg):
         super().__init__()
         self.net = nn.Sequential(
             nn.Conv2d(3, 32, 3, padding=1), #2D convolution layer
             nn.LeakyReLU(),
-            nn.MaxPool2d(2),      # 112x112 -> downsampling layer
+            nn.MaxPool2d(2),      # 112x112
 
             nn.Conv2d(32, 64, 3, padding=1),
             nn.LeakyReLU(),
@@ -32,7 +32,7 @@ class SimpleCNN(nn.Module):
         # print(x.shape)
         return self.net(x)
 
-class DeepCNN(nn.Module):
+class DCNN(nn.Module):
     def __init__(self, num_classes, cfg=None):
         super().__init__()
 
@@ -52,7 +52,7 @@ class DeepCNN(nn.Module):
         self.bn5 = nn.BatchNorm2d(256)
 
         self.pool = nn.MaxPool2d(2, 2)
-        self.dropout = nn.Dropout(0.3)
+        self.dropout = nn.Dropout(float(cfg['model_hyperparams']['dropout']))
 
         self.gap = nn.AdaptiveAvgPool2d((8, 8))
 
@@ -127,13 +127,13 @@ class FENN(nn.Module):
         self.model = nn.Sequential(
             nn.Linear(input_dim, 512),
             nn.BatchNorm1d(512),
-            nn.Dropout(0.3),
+            nn.Dropout(float(cfg['model_hyperparams']['dropout'])),
 
             nn.LeakyReLU(),
 
             nn.Linear(512, 256),
             nn.BatchNorm1d(256),
-            nn.Dropout(0.3),
+            nn.Dropout(float(cfg['model_hyperparams']['dropout'])),
 
             nn.LeakyReLU(),
             nn.Linear(256, num_classes)

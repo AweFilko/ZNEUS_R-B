@@ -1,6 +1,6 @@
 setup:
   df_file: "sports.csv"
-  debug: False
+  debug: True
   device: "cuda" #"cpu"
   img_size: (224,224)
   sport:
@@ -29,15 +29,15 @@ setup:
     normalization: True
 model_hyperparams:
   batch_size: 32
-  epochs: 25
+  epochs: 15
   learning_rate: 0.0005
   weight_decay: 5e-4
-  dropout: 0.4
+  dropout: 0.2
   mode: min
   factor: 0.5
   patience: 2
-model: 3 # 0: simpleCNN \ 1: deepCNN \ 2: ResNet \ 3: FENN
-train: 0 # 0: complex_train \ 1: simple_train
+model: 0 # 0: simpleCNN \ 1: deepCNN \ 2: ResNet \ 3: FENN
+train: 1 # 0: complex_train \ 1: simple_train
 
 
 

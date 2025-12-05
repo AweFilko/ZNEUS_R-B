@@ -88,9 +88,9 @@ def compare_models(results_dict):
 
 def evaluate_model(model, loader, device, cfg):
 
-    if isinstance(model, SimpleCNN):
+    if isinstance(model, SCNN):
         print("\n=== SimpleCNN Analysis ===")
-    elif isinstance(model, DeepCNN):
+    elif isinstance(model, DCNN):
         print("\n=== DeepCNN Analysis ===")
     else:
         print("\n=== FENN Analysis ===")
