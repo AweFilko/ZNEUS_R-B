@@ -98,9 +98,9 @@ def evaluate_model(model, loader, device, cfg):
     acc, prec, rec, f1, y_true, y_pred = get_metrics(model, loader, device)
     print(f"ACC: {acc}| PREC: {prec}| REC: {rec}| F1: {f1}")
 
-    wandb.log({"accuracy": acc,
-               "precision": prec,
-               "recall": rec,
-               "F1": f1})
+    # wandb.log({"accuracy": acc,
+    #            "precision": prec,
+    #            "recall": rec,
+    #            "F1": f1})
 
     confused_mat(y_true, y_pred, cfg['setup']['sport'])

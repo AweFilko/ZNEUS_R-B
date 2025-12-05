@@ -67,13 +67,13 @@ def complex_train(model, train_loader, val_loader, cfg=None):
         val_loss = val_running_loss / val_total
         val_acc = val_correct / val_total
 
-        wandb.log({
-            "train_loss": epoch_loss,
-            "train_acc": epoch_acc,
-            "val_loss": val_loss,
-            "val_acc": val_acc,
-            "epoch": epoch
-        })
+        # wandb.log({
+        #     "train_loss": epoch_loss,
+        #     "train_acc": epoch_acc,
+        #     "val_loss": val_loss,
+        #     "val_acc": val_acc,
+        #     "epoch": epoch
+        # })
 
         print(f"Epoch {epoch + 1}/{num_epochs}  "
               f"Train Loss: {epoch_loss:.4f}  Acc: {epoch_acc:.4f} | "
@@ -118,11 +118,11 @@ def simple_train(model, train_loader, cfg=None):
         model.eval()
 
 
-        wandb.log({
-            "train_loss": epoch_loss,
-            "train_acc": epoch_acc,
-            "epoch": epoch
-        })
+        # wandb.log({
+        #     "train_loss": epoch_loss,
+        #     "train_acc": epoch_acc,
+        #     "epoch": epoch
+        # })
 
         print(f"Epoch {epoch + 1}/{num_epochs}  "
               f"Train Loss: {epoch_loss:.4f}  Acc: {epoch_acc:.4f}")
