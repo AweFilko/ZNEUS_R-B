@@ -1,0 +1,15 @@
+
+===legendary-pyramid-738_FENN Train===
+Epoch 1/10  Train Loss: 1.8950  Acc: 0.4197
+Epoch 2/10  Train Loss: 0.4926  Acc: 0.9262
+Epoch 3/10  Train Loss: 0.1076  Acc: 0.9943
+Epoch 4/10  Train Loss: 0.0390  Acc: 1.0000
+Epoch 5/10  Train Loss: 0.0224  Acc: 1.0000
+Epoch 6/10  Train Loss: 0.0133  Acc: 1.0000
+Epoch 7/10  Train Loss: 0.0091  Acc: 1.0000
+Epoch 8/10  Train Loss: 0.0069  Acc: 1.0000
+Epoch 9/10  Train Loss: 0.0056  Acc: 1.0000
+Epoch 10/10  Train Loss: 0.0040  Acc: 1.0000
+
+===legendary-pyramid-738_FENN Analysis===
+ACC: 0.6428571428571429| PREC: 0.6807256235827664| REC: 0.6428571428571429| F1: 0.637152133580705

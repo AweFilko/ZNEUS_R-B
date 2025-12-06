@@ -1,0 +1,15 @@
+
+===apricot-disco-740_FENN Train===
+Epoch 1/10  Train Loss: 1.9099  Acc: 0.4192
+Epoch 2/10  Train Loss: 0.4736  Acc: 0.9375
+Epoch 3/10  Train Loss: 0.1054  Acc: 0.9969
+Epoch 4/10  Train Loss: 0.0390  Acc: 0.9995
+Epoch 5/10  Train Loss: 0.0212  Acc: 1.0000
+Epoch 6/10  Train Loss: 0.0124  Acc: 1.0000
+Epoch 7/10  Train Loss: 0.0096  Acc: 1.0000
+Epoch 8/10  Train Loss: 0.0082  Acc: 1.0000
+Epoch 9/10  Train Loss: 0.0055  Acc: 1.0000
+Epoch 10/10  Train Loss: 0.0046  Acc: 1.0000
+
+===apricot-disco-740_FENN Analysis===
+ACC: 0.6428571428571429| PREC: 0.6831632653061224| REC: 0.6428571428571429| F1: 0.6477994227994228

@@ -1,0 +1,35 @@
+
+===treasured-energy-783_DCNN Train===
+Epoch 1/25  Train Loss: 3.1631  Acc: 0.2302 | Val Loss: 1.9887  Val Acc: 0.3125
+Epoch 2/25  Train Loss: 1.7561  Acc: 0.4411 | Val Loss: 1.4776  Val Acc: 0.4844
+Epoch 3/25  Train Loss: 1.5695  Acc: 0.5078 | Val Loss: 1.5285  Val Acc: 0.5156
+Epoch 4/25  Train Loss: 1.2968  Acc: 0.5833 | Val Loss: 1.0063  Val Acc: 0.6250
+Epoch 5/25  Train Loss: 1.0445  Acc: 0.6708 | Val Loss: 0.9500  Val Acc: 0.7188
+Epoch 6/25  Train Loss: 0.9467  Acc: 0.7016 | Val Loss: 0.7772  Val Acc: 0.8125
+Epoch 7/25  Train Loss: 0.8537  Acc: 0.7286 | Val Loss: 0.9394  Val Acc: 0.7188
+Epoch 8/25  Train Loss: 0.7549  Acc: 0.7479 | Val Loss: 0.6833  Val Acc: 0.7812
+Epoch 9/25  Train Loss: 0.7028  Acc: 0.7719 | Val Loss: 0.8457  Val Acc: 0.7344
+Epoch 10/25  Train Loss: 0.6841  Acc: 0.7880 | Val Loss: 0.7331  Val Acc: 0.7969
+Epoch 11/25  Train Loss: 0.6220  Acc: 0.7974 | Val Loss: 0.6466  Val Acc: 0.8281
+Epoch 12/25  Train Loss: 0.6044  Acc: 0.8016 | Val Loss: 0.6880  Val Acc: 0.8125
+Epoch 13/25  Train Loss: 0.5542  Acc: 0.8161 | Val Loss: 0.7310  Val Acc: 0.8125
+Epoch 14/25  Train Loss: 0.5583  Acc: 0.8208 | Val Loss: 0.6256  Val Acc: 0.8125
+Epoch 15/25  Train Loss: 0.5345  Acc: 0.8214 | Val Loss: 0.6284  Val Acc: 0.8438
+Epoch 16/25  Train Loss: 0.5181  Acc: 0.8339 | Val Loss: 0.6631  Val Acc: 0.7812
+Epoch 17/25  Train Loss: 0.5022  Acc: 0.8391 | Val Loss: 0.6380  Val Acc: 0.8125
+Epoch 18/25  Train Loss: 0.4986  Acc: 0.8354 | Val Loss: 0.6325  Val Acc: 0.8281
+Epoch 19/25  Train Loss: 0.4997  Acc: 0.8474 | Val Loss: 0.6227  Val Acc: 0.8438
+Epoch 20/25  Train Loss: 0.4999  Acc: 0.8380 | Val Loss: 0.6101  Val Acc: 0.8281
+Epoch 21/25  Train Loss: 0.4946  Acc: 0.8443 | Val Loss: 0.6080  Val Acc: 0.8438
+Epoch 22/25  Train Loss: 0.4837  Acc: 0.8438 | Val Loss: 0.6285  Val Acc: 0.8125
+Epoch 23/25  Train Loss: 0.4994  Acc: 0.8292 | Val Loss: 0.6118  Val Acc: 0.8281
+Epoch 24/25  Train Loss: 0.4716  Acc: 0.8505 | Val Loss: 0.6390  Val Acc: 0.7812
+Epoch 25/25  Train Loss: 0.4494  Acc: 0.8542 | Val Loss: 0.6279  Val Acc: 0.7969
+C:\Users\filip\PycharmProjects\ZNEUS_R&B\ZNEUS_R-B\ZNEUS_Project_2\src\train.py:94: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  state = torch.load(f"{name}_model.pt")
+
+===treasured-energy-783_DCNN Analysis===
+===Validation Results===
+ACC: 0.84375| PREC: 0.8643973214285714| REC: 0.84375| F1: 0.8452256944444444
+===Test Results===
+ACC: 0.859375| PREC: 0.8876488095238094| REC: 0.859375| F1: 0.8592960858585859

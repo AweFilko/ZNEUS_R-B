@@ -1,8 +1,10 @@
 setup:
   df_file: "sports.csv"
-  debug: True
+  debug: False
   device: "cuda" #"cpu"
   img_size: (224,224)
+  random_state: 14
+  build_fe: False
   sport:
     - "sumo wrestling"
     - "water polo"
@@ -19,8 +21,8 @@ setup:
     - "hurdles"
     - "uneven bars"
   transform:
-    horizontal_flip_prob: 0.3
-    random_rotation_degree: 15
+    horizontal_flip_prob: 0.4
+    random_rotation_degree: 25
     color_jitter:
       brightness: 0.2
       contrast: 0.2
@@ -29,15 +31,17 @@ setup:
     normalization: True
 model_hyperparams:
   batch_size: 32
-  epochs: 30
+  epochs: 25
+  dropout: 0.1
+optimizer:
+  choice: 0 # 0: AdamW \ 1: Adam
   learning_rate: 0.0005
   weight_decay: 5e-4
-  dropout: 0.2
-  mode: min
+scheduler:
+  choice: 0 # 0: ReduceLROnPlateau \ 1: CosineAnnealingLR \ 2: None
+  mode: max
   factor: 0.5
   patience: 2
-model: 3 # 0: simpleCNN \ 1: deepCNN \ 2: ResNet \ 3: FENN
+  t_max: 20
+model: 1 # 0: simpleCNN \ 1: deepCNN \ 2: ResNet \ 3: FENN
 train: 0 # 0: complex_train \ 1: simple_train
-
-
-

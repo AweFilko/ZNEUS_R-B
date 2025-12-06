@@ -1,10 +1,18 @@
 import re
 import os
+
+import joblib
 import pandas as pd
 from PIL import Image, UnidentifiedImageError
+
 from numpy.f2py.auxfuncs import throw_error
+from sklearn.decomposition import PCA
+from sklearn.feature_selection import SelectKBest, mutual_info_classif, VarianceThreshold
+from sklearn.linear_model import LogisticRegression
+from sklearn.model_selection import StratifiedKFold
+from sklearn.preprocessing import StandardScaler, LabelEncoder
 from torchvision import transforms
-from torch.utils.data import DataLoader, Dataset
+from torch.utils.data import DataLoader, Dataset, TensorDataset
 from evaluation import *
 from extraction import *
 
@@ -133,6 +141,133 @@ def build_transform(df, cfg,normalize=True):
 
     return transforms.Compose(transform_list), transforms.Compose(transform_eval)
 
+def run_feature_selection(x, y, feature_names=None, out_directory="../fs_outputs", select_k=100, cfg=None):
+    import os
+    os.makedirs(out_directory, exist_ok=True)
+
+    print("Input shape:", x.shape)
+
+    scaler = StandardScaler()
+    xs = scaler.fit_transform(x)
+    joblib.dump(scaler, f"{out_directory}/scaler.joblib")
+
+    vt = VarianceThreshold(threshold=1e-5)
+    xs = vt.fit_transform(xs)
+    joblib.dump(vt, f"{out_directory}/variance_filter.joblib")
+
+    if feature_names is not None:
+        feature_names = np.array(feature_names)[vt.get_support()]
+
+    joblib.dump(vt, f"{out_directory}/variance_threshold.joblib")
+
+    mi = mutual_info_classif(xs, y, random_state=int(cfg['setup']['random_state']))
+
+    print("xs shape:", xs.shape)
+    print("Feature names length:", len(feature_names))
+
+    mi_df = pd.DataFrame({
+        "feature": feature_names if feature_names is not None else [f"f{i}" for i in range(x.shape[1])],
+        "mi": mi
+    }).sort_values("mi", ascending=False)
+
+    mi_df.to_csv(f"{out_directory}/mutual_info_scores.csv", index=False)
+
+    # Plot top MI features
+    # top = min(30, len(mi))
+    # plt.figure(figsize=(6, 6))
+    # plt.barh(mi_df["feature"][:top][::-1], mi_df["mi"][:top][::-1])
+    # plt.xlabel("Mutual Information")
+    # plt.title("Top Mutual Information Features")
+    # plt.tight_layout()
+    # plt.savefig(f"{out_directory}/top_mutual_info.png")
+    # plt.close()
+
+    # SelectKBest
+    selector = SelectKBest(mutual_info_classif, k=min(select_k, x.shape[1]))
+    x_mi = selector.fit_transform(xs, y)
+    selected_mask = selector.get_support()
+    selected_features = np.array(
+        feature_names if feature_names is not None else [f"f{i}" for i in range(x.shape[1])]
+    )[selected_mask]
+
+    pd.DataFrame({"selected_features": selected_features}) \
+        .to_csv(f"{out_directory}/selected_mi_features.csv", index=False)
+
+    joblib.dump(selector, f"{out_directory}/mi_selector.joblib")
+
+    print("MI reduced shape:", x_mi.shape)
+
+    pca = PCA().fit(xs)
+    cum_var = np.cumsum(pca.explained_variance_ratio_)
+
+    # plt.figure()
+    # plt.plot(cum_var)
+    # plt.axhline(0.90)
+    # plt.axhline(0.95)
+    # plt.xlabel("Components")
+    # plt.ylabel("Cumulative Explained Variance")
+    # plt.title("PCA Scree Plot")
+    # plt.grid(True)
+    # plt.savefig(f"{out_directory}/pca_scree.png")
+    # plt.close()
+
+    n90 = np.searchsorted(cum_var, 0.90) + 1
+    n95 = np.searchsorted(cum_var, 0.95) + 1
+
+    print("PCA 90% components:", n90)
+    print("PCA 95% components:", n95)
+
+    pca_red = PCA(n_components=n95)
+    x_pca = pca_red.fit_transform(xs)
+
+    joblib.dump(pca_red, f"{out_directory}/pca_n95.joblib")
+
+    pd.DataFrame({
+        "pc": np.arange(1, len(cum_var)+1),
+        "explained": pca.explained_variance_ratio_,
+        "cumulative": cum_var
+    }).to_csv(f"{out_directory}/pca_explained_variance.csv", index=False)
+
+    print("PCA reduced shape:", x_pca.shape)
+
+    cv = StratifiedKFold(5, shuffle=True, random_state=int(cfg['setup']['random_state']))
+    results = {}
+
+    def cv_score(z):
+        acc = []
+        for tr, te in cv.split(z, y):
+            scaler = StandardScaler()
+            ztr = scaler.fit_transform(z[tr])
+            zte = scaler.transform(z[te])
+
+            clf = LogisticRegression(max_iter=2000)
+            clf.fit(ztr, y[tr])
+            acc.append(clf.score(zte, y[te]))
+        return np.mean(acc)
+
+    results["raw"] = cv_score(xs)
+    results["mutual_info"] = cv_score(x_mi)
+    results["pca_95"] = cv_score(x_pca)
+
+    pd.DataFrame([results]).to_csv(f"{out_directory}/quick_cv_results.csv", index=False)
+    print("CV results:", results)
+
+    # le = LabelEncoder()
+    # y_enc = le.fit_transform(y)
+
+    # x2 = PCA(n_components=2).fit_transform(xs)
+
+    # plt.figure(figsize=(6, 6))
+    # plt.scatter(x2[:, 0], x2[:, 1], c=y_enc, cmap="tab10", s=12)
+    # plt.xlabel("PC1")
+    # plt.ylabel("PC2")
+    # plt.title("PCA 2D Projection (Colored by Class)")
+    # plt.tight_layout()
+    # plt.savefig(f"{out_directory}/pca_projection.png")
+    # plt.close()
+
+    print("Feature selection completed.\n")
+
 class SingleImageDataset(Dataset):
     def __init__(self, df, transform=None, extractor=None, class_to_idx=None):
         self.paths = df["filepaths"].values
@@ -197,13 +332,17 @@ def image_loader(df, cfg):
     loader_test = DataLoader(dataset_test, batch_size=batch_size, shuffle=False, drop_last=True)
     loader_validate = DataLoader(dataset_validate, batch_size=batch_size, shuffle=False, drop_last=True)
 
-    return loader_test, loader_train, loader_validate
+    return loader_train, loader_validate, loader_test
 
-def fe_build_df(df):
+def fe_build_df(df, cfg = None):
+    if not cfg['setup']['build_fe']:
+        return pd.read_csv(os.path.join(os.path.dirname(__file__),
+                                        "..", "data","feature_extracted.csv"))
     extractor = FeatureExtractor()
 
     feature_vectors = []
     label_list = []
+    dataset_type = []
 
     for idx, row in df.iterrows():
         pth = row["filepaths"]
@@ -216,13 +355,16 @@ def fe_build_df(df):
         feature_vectors.append(feats)
 
         label_list.append(row["labels"])
+        dataset_type.append(row["data set"])
 
-    X = pd.DataFrame(feature_vectors)
-    X.columns = [f"f{i}" for i in range(X.shape[1])]
+    x = pd.DataFrame(feature_vectors)
+    x.columns = [f"f{i}" for i in range(x.shape[1])]
 
-    X["label"] = label_list
+    x["label"] = label_list
+    x["set"] = dataset_type
+    x.to_csv("../data/feature_extracted.csv", index=False)
 
-    return X
+    return x
 
 def preprocess_nd_load(cfg):
     df = load_data(cfg=cfg)
@@ -236,4 +378,77 @@ def preprocess_nd_load(cfg):
     loader = image_loader(df, cfg=cfg)
     print("Preprocessing done")
     return loader
+
+def preprocess_nd_load_fe(cfg):
+    df = load_data(cfg=cfg)
+    df = df_sport_adjust(df, cfg=cfg)
+    df = fe_build_df(df, cfg=cfg)
+    le = LabelEncoder()
+
+    if cfg['setup']['build_fe']:
+        x = df.drop(columns=["label", "set"]).values
+        y = df["label"].values
+        y = le.fit_transform(y)
+
+        joblib.dump(le, "../fs_outputs/label_encoder.joblib")
+
+        run_feature_selection(
+            x,
+            y,
+            feature_names=df.drop(columns=["label", "set"]).columns.tolist(),
+            out_directory="../fs_outputs",
+            select_k=100,
+            cfg=cfg
+        )
+
+    x = df[df["set"] == "train"].drop(columns=["label", "set"]).values
+    y = df[df["set"] == "train"]["label"].values
+    y = le.fit_transform(y)
+
+    x_val = df[df["set"] == "valid"].drop(columns=["label", "set"]).values
+    y_val = df[df["set"] == "valid"]["label"].values
+    y_val = le.fit_transform(y_val)
+
+    x_test = df[df["set"] == "valid"].drop(columns=["label", "set"]).values
+    y_test = df[df["set"] == "valid"]["label"].values
+    y_test = le.fit_transform(y_test)
+
+    scaler = joblib.load("../fs_outputs/scaler.joblib")
+    vt = joblib.load("../fs_outputs/variance_filter.joblib")
+    pca = joblib.load("../fs_outputs/pca_n95.joblib")
+
+    x_trained_scaled = scaler.transform(x)
+    x_trained_vt = vt.transform(x_trained_scaled)
+    x_train_final = pca.transform(x_trained_vt)
+
+    x_val_scaled = scaler.transform(x_val)
+    x_val_vt = vt.transform(x_val_scaled)
+    x_val_final = pca.transform(x_val_vt)
+
+    x_test_scaled = scaler.transform(x_test)
+    x_test_vt = vt.transform(x_test_scaled)
+    x_test_final = pca.transform(x_test_vt)
+
+    x_train_tensor = torch.tensor(x_train_final, dtype=torch.float32)
+    y_tensor = torch.tensor(y, dtype=torch.long)
+
+    x_val_tensor = torch.tensor(x_val_final, dtype=torch.float32)
+    y_val_tensor = torch.tensor(y_val, dtype=torch.long)
+
+    x_test_tensor = torch.tensor(x_test_final, dtype=torch.float32)
+    y_test_tensor = torch.tensor(y_test, dtype=torch.long)
+
+    train_dataset = TensorDataset(x_train_tensor, y_tensor)
+    val_dataset = TensorDataset(x_val_tensor, y_val_tensor)
+    test_dataset = TensorDataset(x_test_tensor, y_test_tensor)
+
+    loader = [
+        DataLoader(train_dataset, batch_size=cfg["model_hyperparams"]["batch_size"], shuffle=True),
+        DataLoader(val_dataset, batch_size=cfg["model_hyperparams"]["batch_size"], shuffle=False),
+        DataLoader(test_dataset, batch_size=cfg["model_hyperparams"]["batch_size"], shuffle=False),
+    ]
+    return loader
+
+
+
 

@@ -87,20 +87,25 @@ def compare_models(results_dict):
         print(f"{name:12}  {acc:.4f}  {prec:.4f}  {rec:.4f}  {f1:.4f}")
 
 def evaluate_model(model, loader, device, cfg):
-
-    if isinstance(model, SCNN):
-        print("\n=== SimpleCNN Analysis ===")
-    elif isinstance(model, DCNN):
-        print("\n=== DeepCNN Analysis ===")
-    else:
-        print("\n=== FENN Analysis ===")
-
-    acc, prec, rec, f1, y_true, y_pred = get_metrics(model, loader, device)
+    acc, prec, rec, f1, y_true, y_pred = get_metrics(model, loader[0], device)
+    print("===Validation Results===")
     print(f"ACC: {acc}| PREC: {prec}| REC: {rec}| F1: {f1}")
 
-    # wandb.log({"accuracy": acc,
-    #            "precision": prec,
-    #            "recall": rec,
-    #            "F1": f1})
+    wandb.log({"accuracy": acc,
+               "precision": prec,
+               "recall": rec,
+               "F1": f1})
+
+    confused_mat(y_true, y_pred, cfg['setup']['sport'])
+    print()
+
+    acc, prec, rec, f1, y_true, y_pred = get_metrics(model, loader[1], device)
+    print("===Test Results===")
+    print(f"ACC: {acc}| PREC: {prec}| REC: {rec}| F1: {f1}")
+
+    wandb.log({"accuracy_t": acc,
+               "precision_t": prec,
+               "recall_t": rec,
+               "F1_t": f1})
 
     confused_mat(y_true, y_pred, cfg['setup']['sport'])

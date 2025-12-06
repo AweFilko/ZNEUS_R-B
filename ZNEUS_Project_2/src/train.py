@@ -2,25 +2,14 @@ import torch.optim as optim
 import wandb
 from model import *
 
-# SimpleCNN:
-# # LR = 0.001
-# # Epochs = 20–35
-# # Batch size = 8–16
-# # Dropout = 0.3
-# # Weight decay = 1e-4
-#
-# DeepCNN:
-# # LR = 0.0005
-# # Epochs = 25–40
-# # Batch size = 8
-# # Dropout = 0.4–0.5
-# # Weight decay = 5e-4
-
 def complex_train(model, train_loader, val_loader, cfg=None):
 
     model, criterion, optimizer, scheduler, num_epochs, device = setup(cfg, model)
 
     history = {"loss": [], "acc": []}
+
+    # best_acc = 0
+    # name = wandb.run.name
 
     for epoch in range(num_epochs):
         model.train()
@@ -67,20 +56,29 @@ def complex_train(model, train_loader, val_loader, cfg=None):
         val_loss = val_running_loss / val_total
         val_acc = val_correct / val_total
 
-        # wandb.log({
-        #     "train_loss": epoch_loss,
-        #     "train_acc": epoch_acc,
-        #     "val_loss": val_loss,
-        #     "val_acc": val_acc,
-        #     "epoch": epoch
-        # })
+        wandb.log({
+            "train_loss": epoch_loss,
+            "train_acc": epoch_acc,
+            "val_loss": val_loss,
+            "val_acc": val_acc,
+            "epoch": epoch
+        })
+        # if val_acc > best_acc:
+        #     best_acc = val_acc
+        #     torch.save(model.state_dict(), f"{name}_model.pt")
 
         print(f"Epoch {epoch + 1}/{num_epochs}  "
               f"Train Loss: {epoch_loss:.4f}  Acc: {epoch_acc:.4f} | "
               f"Val Loss: {val_loss:.4f}  Val Acc: {val_acc:.4f}")
 
         if scheduler:
-            scheduler.step(val_loss)
+            if int(cfg['scheduler']['choice'])== 0:
+                scheduler.step(epoch_loss)
+            elif int(cfg['scheduler']['choice'])==1:
+                scheduler.step()
+
+    # state = torch.load(f"{name}_model.pt",weights_only=True)
+    # model.load_state_dict(state)
 
     return model, history
 
@@ -118,38 +116,53 @@ def simple_train(model, train_loader, cfg=None):
         model.eval()
 
 
-        # wandb.log({
-        #     "train_loss": epoch_loss,
-        #     "train_acc": epoch_acc,
-        #     "epoch": epoch
-        # })
+        wandb.log({
+            "train_loss": epoch_loss,
+            "train_acc": epoch_acc,
+            "epoch": epoch
+        })
 
         print(f"Epoch {epoch + 1}/{num_epochs}  "
               f"Train Loss: {epoch_loss:.4f}  Acc: {epoch_acc:.4f}")
 
         if scheduler:
-            scheduler.step(epoch_loss)
+            if int(cfg['scheduler']['choice'])== 0:
+                scheduler.step(epoch_loss)
+            elif int(cfg['scheduler']['choice'])==1:
+                scheduler.step()
 
     return model, history
 
 
 def setup(cfg, model):
     num_epochs = int(cfg['model_hyperparams']["epochs"])
-    lr = float(cfg['model_hyperparams']['learning_rate'])
     device = cfg['setup']['device']
-    weight_decay = float(cfg['model_hyperparams']['weight_decay'])
-    mode = cfg['model_hyperparams']['mode']
-    factor = float(cfg['model_hyperparams']['factor'])
-    patience = int(cfg['model_hyperparams']['patience'])
+    lr = float(cfg['optimizer']['learning_rate'])
+    weight_decay = float(cfg['optimizer']['weight_decay'])
+    optimizer = None
+
+    if int(cfg['optimizer']['choice']) == 0:
+        optimizer = optim.AdamW(model.parameters(), lr=lr, weight_decay=weight_decay)
+    elif int(cfg['optimizer']['choice']) == 1:
+        optimizer = optim.Adam(model.parameters(), lr=lr, weight_decay=weight_decay)
+
+    if int(cfg['scheduler']['choice']) == 0:
+        mode = cfg['scheduler']['mode']
+        factor = float(cfg['scheduler']['factor'])
+        patience = int(cfg['scheduler']['patience'])
+        scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(
+            optimizer,
+            mode=mode,
+            factor=factor,
+            patience=patience,
+        )
+    elif int(cfg['scheduler']['choice']) == 1:
+        t_max = int(cfg['scheduler']['t_max'])
+        scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optimizer, T_max=t_max)
+    else:
+        scheduler = None
 
     model = model.to(device)
     criterion = nn.CrossEntropyLoss()
-    optimizer = optim.AdamW(model.parameters(), lr=lr, weight_decay=weight_decay)  # change here for more experiments!!!
-    scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(
-        optimizer,
-        mode=mode,
-        factor=factor,
-        patience=patience,
-    )
 
     return model, criterion, optimizer, scheduler, num_epochs, device

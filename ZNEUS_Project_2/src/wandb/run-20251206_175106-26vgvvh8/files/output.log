@@ -1,0 +1,65 @@
+
+===ethereal-pond-768_FENN Train===
+Epoch 1/60  Train Loss: 2.0698  Acc: 0.3345 | Val Loss: 1.6765  Val Acc: 0.5286
+Epoch 2/60  Train Loss: 0.8800  Acc: 0.8209 | Val Loss: 1.3367  Val Acc: 0.6143
+Epoch 3/60  Train Loss: 0.2770  Acc: 0.9711 | Val Loss: 1.2206  Val Acc: 0.6286
+Epoch 4/60  Train Loss: 0.1162  Acc: 0.9917 | Val Loss: 1.2146  Val Acc: 0.5714
+Epoch 5/60  Train Loss: 0.0569  Acc: 0.9990 | Val Loss: 1.1723  Val Acc: 0.6000
+Epoch 6/60  Train Loss: 0.0398  Acc: 0.9990 | Val Loss: 1.1842  Val Acc: 0.6571
+Epoch 7/60  Train Loss: 0.0309  Acc: 0.9985 | Val Loss: 1.1413  Val Acc: 0.6143
+Epoch 8/60  Train Loss: 0.0238  Acc: 0.9990 | Val Loss: 1.1758  Val Acc: 0.6429
+Epoch 9/60  Train Loss: 0.0184  Acc: 0.9995 | Val Loss: 1.2158  Val Acc: 0.6143
+Epoch 10/60  Train Loss: 0.0159  Acc: 1.0000 | Val Loss: 1.2073  Val Acc: 0.6143
+Epoch 11/60  Train Loss: 0.0128  Acc: 1.0000 | Val Loss: 1.1526  Val Acc: 0.6286
+Epoch 12/60  Train Loss: 0.0138  Acc: 0.9995 | Val Loss: 1.1781  Val Acc: 0.6143
+Epoch 13/60  Train Loss: 0.0120  Acc: 0.9995 | Val Loss: 1.1793  Val Acc: 0.6286
+Epoch 14/60  Train Loss: 0.0099  Acc: 1.0000 | Val Loss: 1.1768  Val Acc: 0.6286
+Epoch 15/60  Train Loss: 0.0089  Acc: 0.9995 | Val Loss: 1.1221  Val Acc: 0.6286
+Epoch 16/60  Train Loss: 0.0093  Acc: 1.0000 | Val Loss: 1.1277  Val Acc: 0.6429
+Epoch 17/60  Train Loss: 0.0083  Acc: 1.0000 | Val Loss: 1.1675  Val Acc: 0.6286
+Epoch 18/60  Train Loss: 0.0079  Acc: 1.0000 | Val Loss: 1.2019  Val Acc: 0.6143
+Epoch 19/60  Train Loss: 0.0083  Acc: 1.0000 | Val Loss: 1.1943  Val Acc: 0.5857
+Epoch 20/60  Train Loss: 0.0079  Acc: 1.0000 | Val Loss: 1.1824  Val Acc: 0.5714
+Epoch 21/60  Train Loss: 0.0077  Acc: 1.0000 | Val Loss: 1.1535  Val Acc: 0.6286
+Epoch 22/60  Train Loss: 0.0076  Acc: 1.0000 | Val Loss: 1.1757  Val Acc: 0.6286
+Epoch 23/60  Train Loss: 0.0071  Acc: 1.0000 | Val Loss: 1.1390  Val Acc: 0.6143
+Epoch 24/60  Train Loss: 0.0087  Acc: 1.0000 | Val Loss: 1.1300  Val Acc: 0.6143
+Epoch 25/60  Train Loss: 0.0079  Acc: 1.0000 | Val Loss: 1.1522  Val Acc: 0.6714
+Epoch 26/60  Train Loss: 0.0064  Acc: 1.0000 | Val Loss: 1.1728  Val Acc: 0.6143
+Epoch 27/60  Train Loss: 0.0073  Acc: 0.9995 | Val Loss: 1.2058  Val Acc: 0.6286
+Epoch 28/60  Train Loss: 0.0075  Acc: 1.0000 | Val Loss: 1.2418  Val Acc: 0.6000
+Epoch 29/60  Train Loss: 0.0094  Acc: 0.9995 | Val Loss: 1.1809  Val Acc: 0.6286
+Epoch 30/60  Train Loss: 0.0084  Acc: 0.9990 | Val Loss: 1.3719  Val Acc: 0.5571
+Epoch 31/60  Train Loss: 0.0075  Acc: 1.0000 | Val Loss: 1.2440  Val Acc: 0.6143
+Epoch 32/60  Train Loss: 0.0067  Acc: 1.0000 | Val Loss: 1.3407  Val Acc: 0.5714
+Epoch 33/60  Train Loss: 0.0064  Acc: 1.0000 | Val Loss: 1.2508  Val Acc: 0.6000
+Epoch 34/60  Train Loss: 0.0064  Acc: 1.0000 | Val Loss: 1.2653  Val Acc: 0.6143
+Epoch 35/60  Train Loss: 0.0059  Acc: 1.0000 | Val Loss: 1.3788  Val Acc: 0.5857
+Epoch 36/60  Train Loss: 0.0065  Acc: 1.0000 | Val Loss: 1.3912  Val Acc: 0.5857
+Epoch 37/60  Train Loss: 0.0082  Acc: 0.9990 | Val Loss: 1.4467  Val Acc: 0.5857
+Epoch 38/60  Train Loss: 0.3108  Acc: 0.9071 | Val Loss: 2.1178  Val Acc: 0.5286
+Epoch 39/60  Train Loss: 0.5268  Acc: 0.8441 | Val Loss: 1.6785  Val Acc: 0.5857
+Epoch 40/60  Train Loss: 0.1822  Acc: 0.9494 | Val Loss: 1.5859  Val Acc: 0.5857
+Epoch 41/60  Train Loss: 0.0896  Acc: 0.9737 | Val Loss: 1.4991  Val Acc: 0.6143
+Epoch 42/60  Train Loss: 0.0433  Acc: 0.9881 | Val Loss: 1.4089  Val Acc: 0.6143
+Epoch 43/60  Train Loss: 0.0241  Acc: 0.9948 | Val Loss: 1.4906  Val Acc: 0.6429
+Epoch 44/60  Train Loss: 0.0193  Acc: 0.9948 | Val Loss: 1.4853  Val Acc: 0.6429
+Epoch 45/60  Train Loss: 0.0145  Acc: 0.9969 | Val Loss: 1.5199  Val Acc: 0.6429
+Epoch 46/60  Train Loss: 0.0175  Acc: 0.9959 | Val Loss: 1.4852  Val Acc: 0.6429
+Epoch 47/60  Train Loss: 0.0177  Acc: 0.9959 | Val Loss: 1.3940  Val Acc: 0.6571
+Epoch 48/60  Train Loss: 0.0105  Acc: 0.9985 | Val Loss: 1.4960  Val Acc: 0.6429
+Epoch 49/60  Train Loss: 0.0164  Acc: 0.9974 | Val Loss: 1.5099  Val Acc: 0.6286
+Epoch 50/60  Train Loss: 0.0086  Acc: 0.9979 | Val Loss: 1.4163  Val Acc: 0.6429
+Epoch 51/60  Train Loss: 0.0071  Acc: 0.9990 | Val Loss: 1.5532  Val Acc: 0.6286
+Epoch 52/60  Train Loss: 0.0063  Acc: 0.9995 | Val Loss: 1.5165  Val Acc: 0.6429
+Epoch 53/60  Train Loss: 0.0038  Acc: 1.0000 | Val Loss: 1.5137  Val Acc: 0.6429
+Epoch 54/60  Train Loss: 0.0077  Acc: 0.9995 | Val Loss: 1.4105  Val Acc: 0.6286
+Epoch 55/60  Train Loss: 0.0062  Acc: 0.9990 | Val Loss: 1.4840  Val Acc: 0.6429
+Epoch 56/60  Train Loss: 0.0039  Acc: 0.9995 | Val Loss: 1.4454  Val Acc: 0.6429
+Epoch 57/60  Train Loss: 0.0041  Acc: 1.0000 | Val Loss: 1.5358  Val Acc: 0.6429
+Epoch 58/60  Train Loss: 0.0087  Acc: 0.9974 | Val Loss: 1.5144  Val Acc: 0.6429
+Epoch 59/60  Train Loss: 0.0042  Acc: 0.9995 | Val Loss: 1.4371  Val Acc: 0.6429
+Epoch 60/60  Train Loss: 0.0045  Acc: 0.9985 | Val Loss: 1.4951  Val Acc: 0.6429
+
+===ethereal-pond-768_FENN Analysis===
+ACC: 0.6428571428571429| PREC: 0.6922619047619047| REC: 0.6428571428571429| F1: 0.6514457764457765

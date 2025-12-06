@@ -1,0 +1,10 @@
+
+===misunderstood-frog-772_DCNN Train===
+Traceback (most recent call last):
+  File "C:\Users\filip\PycharmProjects\ZNEUS_R&B\ZNEUS_R-B\ZNEUS_Project_2\src\main.py", line 56, in <module>
+    else complex_train(model, loader[0],loader[1], cfg)
+  File "C:\Users\filip\PycharmProjects\ZNEUS_R&B\ZNEUS_R-B\ZNEUS_Project_2\src\train.py", line 21, in complex_train
+    model, criterion, optimizer, scheduler, num_epochs, device = setup(cfg, model)
+  File "C:\Users\filip\PycharmProjects\ZNEUS_R&B\ZNEUS_R-B\ZNEUS_Project_2\src\train.py", line 165, in setup
+    t_max = int(cfg['scheduler']['t_max'])
+KeyError: 't_max'

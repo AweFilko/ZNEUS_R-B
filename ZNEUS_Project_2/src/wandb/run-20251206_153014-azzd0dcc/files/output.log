@@ -1,0 +1,55 @@
+
+===glamorous-microwave-748_FENN Train===
+Epoch 1/50  Train Loss: 2.5863  Acc: 0.1311 | Val Loss: 2.4004  Val Acc: 0.2286
+Epoch 2/50  Train Loss: 2.1574  Acc: 0.4001 | Val Loss: 2.2150  Val Acc: 0.4000
+Epoch 3/50  Train Loss: 1.8391  Acc: 0.6030 | Val Loss: 2.0770  Val Acc: 0.4714
+Epoch 4/50  Train Loss: 1.5663  Acc: 0.7259 | Val Loss: 1.9699  Val Acc: 0.5143
+Epoch 5/50  Train Loss: 1.3141  Acc: 0.8183 | Val Loss: 1.8580  Val Acc: 0.5286
+Epoch 6/50  Train Loss: 1.1025  Acc: 0.8756 | Val Loss: 1.7900  Val Acc: 0.5571
+Epoch 7/50  Train Loss: 0.9131  Acc: 0.9184 | Val Loss: 1.7186  Val Acc: 0.5571
+Epoch 8/50  Train Loss: 0.7463  Acc: 0.9592 | Val Loss: 1.6510  Val Acc: 0.5857
+Epoch 9/50  Train Loss: 0.6012  Acc: 0.9809 | Val Loss: 1.6065  Val Acc: 0.6000
+Epoch 10/50  Train Loss: 0.4970  Acc: 0.9855 | Val Loss: 1.5678  Val Acc: 0.5714
+Epoch 11/50  Train Loss: 0.4056  Acc: 0.9907 | Val Loss: 1.5354  Val Acc: 0.5857
+Epoch 12/50  Train Loss: 0.3256  Acc: 0.9979 | Val Loss: 1.5117  Val Acc: 0.5857
+Epoch 13/50  Train Loss: 0.2721  Acc: 0.9985 | Val Loss: 1.4846  Val Acc: 0.5857
+Epoch 14/50  Train Loss: 0.2311  Acc: 0.9990 | Val Loss: 1.4791  Val Acc: 0.5571
+Epoch 15/50  Train Loss: 0.1943  Acc: 0.9990 | Val Loss: 1.4579  Val Acc: 0.5857
+Epoch 16/50  Train Loss: 0.1685  Acc: 1.0000 | Val Loss: 1.4361  Val Acc: 0.5714
+Epoch 17/50  Train Loss: 0.1465  Acc: 1.0000 | Val Loss: 1.4388  Val Acc: 0.5857
+Epoch 18/50  Train Loss: 0.1247  Acc: 1.0000 | Val Loss: 1.4384  Val Acc: 0.5714
+Epoch 19/50  Train Loss: 0.1104  Acc: 1.0000 | Val Loss: 1.4257  Val Acc: 0.5714
+Epoch 20/50  Train Loss: 0.0987  Acc: 1.0000 | Val Loss: 1.4307  Val Acc: 0.5714
+Epoch 21/50  Train Loss: 0.0917  Acc: 0.9995 | Val Loss: 1.4167  Val Acc: 0.5857
+Epoch 22/50  Train Loss: 0.0776  Acc: 1.0000 | Val Loss: 1.4188  Val Acc: 0.5714
+Epoch 23/50  Train Loss: 0.0710  Acc: 1.0000 | Val Loss: 1.4277  Val Acc: 0.5714
+Epoch 24/50  Train Loss: 0.0640  Acc: 1.0000 | Val Loss: 1.3986  Val Acc: 0.5857
+Epoch 25/50  Train Loss: 0.0604  Acc: 1.0000 | Val Loss: 1.4086  Val Acc: 0.5857
+Epoch 26/50  Train Loss: 0.0519  Acc: 1.0000 | Val Loss: 1.4210  Val Acc: 0.5857
+Epoch 27/50  Train Loss: 0.0488  Acc: 1.0000 | Val Loss: 1.4227  Val Acc: 0.5857
+Epoch 28/50  Train Loss: 0.0465  Acc: 1.0000 | Val Loss: 1.3987  Val Acc: 0.5857
+Epoch 29/50  Train Loss: 0.0471  Acc: 1.0000 | Val Loss: 1.3981  Val Acc: 0.5857
+Epoch 30/50  Train Loss: 0.0422  Acc: 1.0000 | Val Loss: 1.4088  Val Acc: 0.5714
+Epoch 31/50  Train Loss: 0.0396  Acc: 1.0000 | Val Loss: 1.4035  Val Acc: 0.5714
+Epoch 32/50  Train Loss: 0.0397  Acc: 1.0000 | Val Loss: 1.4150  Val Acc: 0.5857
+Epoch 33/50  Train Loss: 0.0376  Acc: 1.0000 | Val Loss: 1.4065  Val Acc: 0.6000
+Epoch 34/50  Train Loss: 0.0373  Acc: 1.0000 | Val Loss: 1.3908  Val Acc: 0.5857
+Epoch 35/50  Train Loss: 0.0393  Acc: 1.0000 | Val Loss: 1.3777  Val Acc: 0.6143
+Epoch 36/50  Train Loss: 0.0351  Acc: 1.0000 | Val Loss: 1.4210  Val Acc: 0.5857
+Epoch 37/50  Train Loss: 0.0372  Acc: 1.0000 | Val Loss: 1.3999  Val Acc: 0.5857
+Epoch 38/50  Train Loss: 0.0336  Acc: 1.0000 | Val Loss: 1.4053  Val Acc: 0.5714
+Epoch 39/50  Train Loss: 0.0329  Acc: 1.0000 | Val Loss: 1.4111  Val Acc: 0.5857
+Epoch 40/50  Train Loss: 0.0320  Acc: 1.0000 | Val Loss: 1.3880  Val Acc: 0.5857
+Epoch 41/50  Train Loss: 0.0325  Acc: 1.0000 | Val Loss: 1.3922  Val Acc: 0.5857
+Epoch 42/50  Train Loss: 0.0320  Acc: 1.0000 | Val Loss: 1.4066  Val Acc: 0.5857
+Epoch 43/50  Train Loss: 0.0319  Acc: 1.0000 | Val Loss: 1.4210  Val Acc: 0.5714
+Epoch 44/50  Train Loss: 0.0306  Acc: 1.0000 | Val Loss: 1.4293  Val Acc: 0.5714
+Epoch 45/50  Train Loss: 0.0303  Acc: 1.0000 | Val Loss: 1.3918  Val Acc: 0.5857
+Epoch 46/50  Train Loss: 0.0318  Acc: 1.0000 | Val Loss: 1.3926  Val Acc: 0.5857
+Epoch 47/50  Train Loss: 0.0308  Acc: 1.0000 | Val Loss: 1.4124  Val Acc: 0.5714
+Epoch 48/50  Train Loss: 0.0319  Acc: 1.0000 | Val Loss: 1.4258  Val Acc: 0.5714
+Epoch 49/50  Train Loss: 0.0319  Acc: 1.0000 | Val Loss: 1.4187  Val Acc: 0.5857
+Epoch 50/50  Train Loss: 0.0318  Acc: 1.0000 | Val Loss: 1.3940  Val Acc: 0.6000
+
+===glamorous-microwave-748_FENN Analysis===
+ACC: 0.6| PREC: 0.6892857142857144| REC: 0.6| F1: 0.5976234083376941

@@ -54,27 +54,27 @@ class DCNN(nn.Module):
         self.pool = nn.MaxPool2d(2, 2)
         self.dropout = nn.Dropout(float(cfg['model_hyperparams']['dropout']))
 
-        self.gap = nn.AdaptiveAvgPool2d((8, 8))
+        self.gap = nn.AdaptiveAvgPool2d((16, 16))
 
-        self.fc1 = nn.Linear(256 * 8 * 8, 512)
+        self.fc1 = nn.Linear(256 * 16 * 16, 512)
         self.fc2 = nn.Linear(512, num_classes)
 
     def forward(self, x):
 
-        x = self.pool(F.relu(self.bn1(self.conv1(x))))
-        x = self.pool(F.relu(self.bn2(self.conv2(x))))
+        x = self.pool(F.gelu(self.bn1(self.conv1(x))))
+        x = self.pool(F.gelu(self.bn2(self.conv2(x))))
 
-        x = F.leaky_relu(self.bn3(self.conv3(x)))
+        x = F.gelu(self.bn3(self.conv3(x)))
         x = self.pool(F.relu(self.bn4(self.conv4(x))))
 
-        x = F.leaky_relu(self.bn5(self.conv5(x)))
+        x = F.gelu(self.bn5(self.conv5(x)))
 
         # print(x.shape)
 
         x = self.gap(x)
 
         x = x.view(x.size(0), -1)
-        x = self.dropout(F.relu(self.fc1(x)))
+        x = self.dropout(F.gelu(self.fc1(x)))
         x = self.fc2(x)
 
         return x
@@ -122,10 +122,22 @@ class ResNet(nn.Module):
         return self.fc(x)
 
 class FENN(nn.Module):
-     def __init__(self, input_dim = 6686, num_classes = 14, cfg = None):
+     def __init__(self, input_dim = 101, num_classes = 14, cfg = None):
         super().__init__()
         self.model = nn.Sequential(
             nn.Linear(input_dim, 512),
+            nn.BatchNorm1d(512),
+            nn.Dropout(float(cfg['model_hyperparams']['dropout'])),
+
+            nn.LeakyReLU(),
+
+            nn.Linear(512, 1024),
+            nn.BatchNorm1d(1024),
+            nn.Dropout(float(cfg['model_hyperparams']['dropout'])),
+
+            nn.LeakyReLU(),
+
+            nn.Linear(1024, 512),
             nn.BatchNorm1d(512),
             nn.Dropout(float(cfg['model_hyperparams']['dropout'])),
 

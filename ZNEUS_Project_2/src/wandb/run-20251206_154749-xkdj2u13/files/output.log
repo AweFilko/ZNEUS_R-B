@@ -1,0 +1,35 @@
+
+===woven-silence-757_ResNet Train===
+Epoch 1/30  Train Loss: 9.2794  Acc: 0.1453 | Val Loss: 3.3245  Val Acc: 0.3125
+Epoch 2/30  Train Loss: 2.4811  Acc: 0.2901 | Val Loss: 2.3440  Val Acc: 0.3594
+Epoch 3/30  Train Loss: 2.0309  Acc: 0.3906 | Val Loss: 1.9837  Val Acc: 0.3906
+Epoch 4/30  Train Loss: 1.9156  Acc: 0.4313 | Val Loss: 1.8082  Val Acc: 0.4688
+Epoch 5/30  Train Loss: 1.7407  Acc: 0.4437 | Val Loss: 1.8099  Val Acc: 0.4531
+Epoch 6/30  Train Loss: 1.6700  Acc: 0.4708 | Val Loss: 1.5237  Val Acc: 0.5156
+Epoch 7/30  Train Loss: 1.4798  Acc: 0.5396 | Val Loss: 1.5002  Val Acc: 0.5469
+Epoch 8/30  Train Loss: 1.5044  Acc: 0.5307 | Val Loss: 1.4834  Val Acc: 0.4688
+Epoch 9/30  Train Loss: 1.3807  Acc: 0.5766 | Val Loss: 1.5225  Val Acc: 0.5625
+Epoch 10/30  Train Loss: 1.3410  Acc: 0.5885 | Val Loss: 1.2801  Val Acc: 0.6562
+Epoch 11/30  Train Loss: 1.2710  Acc: 0.6083 | Val Loss: 1.5944  Val Acc: 0.4844
+Epoch 12/30  Train Loss: 1.2255  Acc: 0.6276 | Val Loss: 1.1019  Val Acc: 0.6250
+Epoch 13/30  Train Loss: 1.1897  Acc: 0.6292 | Val Loss: 1.1155  Val Acc: 0.6406
+Epoch 14/30  Train Loss: 1.1271  Acc: 0.6479 | Val Loss: 1.2466  Val Acc: 0.6875
+Epoch 15/30  Train Loss: 1.0530  Acc: 0.6734 | Val Loss: 0.9731  Val Acc: 0.7031
+Epoch 16/30  Train Loss: 0.9852  Acc: 0.7078 | Val Loss: 1.0146  Val Acc: 0.7188
+Epoch 17/30  Train Loss: 0.9753  Acc: 0.7005 | Val Loss: 0.9553  Val Acc: 0.7500
+Epoch 18/30  Train Loss: 0.8882  Acc: 0.7167 | Val Loss: 1.0930  Val Acc: 0.6094
+Epoch 19/30  Train Loss: 0.9063  Acc: 0.7292 | Val Loss: 0.9555  Val Acc: 0.6562
+Epoch 20/30  Train Loss: 0.9146  Acc: 0.7229 | Val Loss: 1.0140  Val Acc: 0.6719
+Epoch 21/30  Train Loss: 0.7240  Acc: 0.7859 | Val Loss: 0.7760  Val Acc: 0.7344
+Epoch 22/30  Train Loss: 0.6441  Acc: 0.7964 | Val Loss: 0.8745  Val Acc: 0.7031
+Epoch 23/30  Train Loss: 0.6512  Acc: 0.7859 | Val Loss: 0.7306  Val Acc: 0.7656
+Epoch 24/30  Train Loss: 0.5957  Acc: 0.8094 | Val Loss: 0.7877  Val Acc: 0.7500
+Epoch 25/30  Train Loss: 0.6084  Acc: 0.8104 | Val Loss: 0.6297  Val Acc: 0.7656
+Epoch 26/30  Train Loss: 0.5397  Acc: 0.8370 | Val Loss: 0.9083  Val Acc: 0.7344
+Epoch 27/30  Train Loss: 0.5144  Acc: 0.8453 | Val Loss: 0.8027  Val Acc: 0.7188
+Epoch 28/30  Train Loss: 0.5188  Acc: 0.8354 | Val Loss: 0.8549  Val Acc: 0.7188
+Epoch 29/30  Train Loss: 0.4130  Acc: 0.8708 | Val Loss: 0.6988  Val Acc: 0.7656
+Epoch 30/30  Train Loss: 0.3733  Acc: 0.8760 | Val Loss: 0.8497  Val Acc: 0.7188
+
+===woven-silence-757_ResNet Analysis===
+ACC: 0.71875| PREC: 0.7725074404761904| REC: 0.71875| F1: 0.7361505681818182
