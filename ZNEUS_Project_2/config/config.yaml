@@ -1,10 +1,10 @@
 setup:
   df_file: "sports.csv"
-  debug: False
+  debug: True
   device: "cuda" #"cpu"
   img_size: (224,224)
   random_state: 14
-  build_fe: False
+  build_fe: True
   sport:
     - "sumo wrestling"
     - "water polo"
@@ -43,5 +43,5 @@ scheduler:
   factor: 0.5
   patience: 2
   t_max: 20
-model: 1 # 0: simpleCNN \ 1: deepCNN \ 2: ResNet \ 3: FENN
+model: 0 # 0: simpleCNN \ 1: deepCNN \ 2: ResNet \ 3: FENN
 train: 0 # 0: complex_train \ 1: simple_train

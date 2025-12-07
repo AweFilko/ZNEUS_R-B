@@ -1,0 +1,12 @@
+{"time":"2025-12-07T14:44:18.6204375+01:00","level":"INFO","msg":"stream: starting","core version":"0.23.0"}
+{"time":"2025-12-07T14:44:18.9891398+01:00","level":"INFO","msg":"stream: created new stream","id":"lciv8i54"}
+{"time":"2025-12-07T14:44:18.989686+01:00","level":"INFO","msg":"handler: started","stream_id":"lciv8i54"}
+{"time":"2025-12-07T14:44:18.9902149+01:00","level":"INFO","msg":"stream: started","id":"lciv8i54"}
+{"time":"2025-12-07T14:44:18.9902149+01:00","level":"INFO","msg":"sender: started","stream_id":"lciv8i54"}
+{"time":"2025-12-07T14:44:18.9902149+01:00","level":"INFO","msg":"writer: started","stream_id":"lciv8i54"}
+{"time":"2025-12-07T14:44:44.6071865+01:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-12-07T14:44:44.951099+01:00","level":"INFO","msg":"handler: operation stats","stats":{}}
+{"time":"2025-12-07T14:44:44.955493+01:00","level":"INFO","msg":"stream: closing","id":"lciv8i54"}
+{"time":"2025-12-07T14:44:44.955493+01:00","level":"INFO","msg":"handler: closed","stream_id":"lciv8i54"}
+{"time":"2025-12-07T14:44:44.955493+01:00","level":"INFO","msg":"sender: closed","stream_id":"lciv8i54"}
+{"time":"2025-12-07T14:44:44.955493+01:00","level":"INFO","msg":"stream: closed","id":"lciv8i54"}

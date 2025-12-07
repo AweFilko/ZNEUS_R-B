@@ -8,8 +8,8 @@ def complex_train(model, train_loader, val_loader, cfg=None):
 
     history = {"loss": [], "acc": []}
 
-    # best_acc = 0
-    # name = wandb.run.name
+    best_acc = 0
+    name = wandb.run.name
 
     for epoch in range(num_epochs):
         model.train()
@@ -63,9 +63,9 @@ def complex_train(model, train_loader, val_loader, cfg=None):
             "val_acc": val_acc,
             "epoch": epoch
         })
-        # if val_acc > best_acc:
-        #     best_acc = val_acc
-        #     torch.save(model.state_dict(), f"{name}_model.pt")
+        if val_acc > best_acc:
+            best_acc = val_acc
+            torch.save(model.state_dict(), f"{name}_model.pt")
 
         print(f"Epoch {epoch + 1}/{num_epochs}  "
               f"Train Loss: {epoch_loss:.4f}  Acc: {epoch_acc:.4f} | "
@@ -77,8 +77,8 @@ def complex_train(model, train_loader, val_loader, cfg=None):
             elif int(cfg['scheduler']['choice'])==1:
                 scheduler.step()
 
-    # state = torch.load(f"{name}_model.pt",weights_only=True)
-    # model.load_state_dict(state)
+    state = torch.load(f"{name}_model.pt",weights_only=True)
+    model.load_state_dict(state)
 
     return model, history
 

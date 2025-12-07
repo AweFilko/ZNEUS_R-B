@@ -19,8 +19,3 @@ config: {'setup': {'df_file': 'sports.csv', 'debug': False, 'device': 'cuda', 'i
 2025-11-29 16:19:23,033 INFO    MainThread:27928 [wandb_run.py:_redirect():2421] Wrapping output streams.
 2025-11-29 16:19:23,033 INFO    MainThread:27928 [wandb_run.py:_redirect():2444] Redirects installed.
 2025-11-29 16:19:23,036 INFO    MainThread:27928 [wandb_init.py:init():1080] run started, returning control to user process
-2025-11-29 17:12:57,103 INFO    MainThread:27928 [wandb_run.py:_finish():2270] finishing run awefilko-fiit-stu/ZNEUS_R&B/eshpkdlo
-2025-11-29 17:12:57,104 INFO    MainThread:27928 [wandb_run.py:_atexit_cleanup():2469] got exitcode: 0
-2025-11-29 17:12:57,104 INFO    MainThread:27928 [wandb_run.py:_restore():2451] restore
-2025-11-29 17:12:57,104 INFO    MainThread:27928 [wandb_run.py:_restore():2457] restore done
-2025-11-29 17:12:58,492 INFO    MainThread:27928 [wandb_run.py:_footer_sync_info():3853] logging synced files

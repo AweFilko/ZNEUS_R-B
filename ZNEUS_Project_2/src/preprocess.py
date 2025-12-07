@@ -339,14 +339,12 @@ def fe_build_df(df, cfg = None):
         return pd.read_csv(os.path.join(os.path.dirname(__file__),
                                         "..", "data","feature_extracted.csv"))
     extractor = FeatureExtractor()
-
     feature_vectors = []
     label_list = []
     dataset_type = []
 
     for idx, row in df.iterrows():
         pth = row["filepaths"]
-
         img = Image.open(f"../data/{pth}").convert("RGB")
         img = np.array(img)
         img = cv2.cvtColor(img, cv2.COLOR_RGB2BGR)
@@ -409,8 +407,8 @@ def preprocess_nd_load_fe(cfg):
     y_val = df[df["set"] == "valid"]["label"].values
     y_val = le.fit_transform(y_val)
 
-    x_test = df[df["set"] == "valid"].drop(columns=["label", "set"]).values
-    y_test = df[df["set"] == "valid"]["label"].values
+    x_test = df[df["set"] == "test"].drop(columns=["label", "set"]).values
+    y_test = df[df["set"] == "test"]["label"].values
     y_test = le.fit_transform(y_test)
 
     scaler = joblib.load("../fs_outputs/scaler.joblib")
@@ -448,7 +446,3 @@ def preprocess_nd_load_fe(cfg):
         DataLoader(test_dataset, batch_size=cfg["model_hyperparams"]["batch_size"], shuffle=False),
     ]
     return loader
-
-
-
-

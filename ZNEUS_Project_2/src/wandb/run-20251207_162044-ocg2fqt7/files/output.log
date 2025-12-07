@@ -1,0 +1,49 @@
+
+===northern-armadillo-806_SCNN Train===
+Epoch 1/40  Train Loss: 2.6132  Acc: 0.2234 | Val Loss: 1.9345  Val Acc: 0.4219
+Epoch 2/40  Train Loss: 1.7831  Acc: 0.4344 | Val Loss: 1.7495  Val Acc: 0.4062
+Epoch 3/40  Train Loss: 1.5349  Acc: 0.5182 | Val Loss: 1.4054  Val Acc: 0.5156
+Epoch 4/40  Train Loss: 1.3722  Acc: 0.5687 | Val Loss: 1.3085  Val Acc: 0.5938
+Epoch 5/40  Train Loss: 1.2180  Acc: 0.6130 | Val Loss: 0.9976  Val Acc: 0.6094
+Epoch 6/40  Train Loss: 1.0638  Acc: 0.6620 | Val Loss: 1.1475  Val Acc: 0.6719
+Epoch 7/40  Train Loss: 0.9377  Acc: 0.6953 | Val Loss: 1.0147  Val Acc: 0.6406
+Epoch 8/40  Train Loss: 0.8340  Acc: 0.7234 | Val Loss: 0.9526  Val Acc: 0.6875
+Epoch 9/40  Train Loss: 0.7156  Acc: 0.7750 | Val Loss: 1.0145  Val Acc: 0.6719
+Epoch 10/40  Train Loss: 0.6475  Acc: 0.7906 | Val Loss: 0.9182  Val Acc: 0.7031
+Epoch 11/40  Train Loss: 0.5875  Acc: 0.8078 | Val Loss: 0.9723  Val Acc: 0.7344
+Epoch 12/40  Train Loss: 0.5201  Acc: 0.8401 | Val Loss: 0.8426  Val Acc: 0.7500
+Epoch 13/40  Train Loss: 0.4699  Acc: 0.8500 | Val Loss: 0.9024  Val Acc: 0.6875
+Epoch 14/40  Train Loss: 0.3503  Acc: 0.8885 | Val Loss: 0.8659  Val Acc: 0.7656
+Epoch 15/40  Train Loss: 0.3486  Acc: 0.8844 | Val Loss: 0.8157  Val Acc: 0.7500
+Epoch 16/40  Train Loss: 0.3264  Acc: 0.8958 | Val Loss: 0.8465  Val Acc: 0.7656
+Epoch 17/40  Train Loss: 0.3047  Acc: 0.8974 | Val Loss: 0.8806  Val Acc: 0.7500
+Epoch 18/40  Train Loss: 0.2640  Acc: 0.9167 | Val Loss: 0.8926  Val Acc: 0.7344
+Epoch 19/40  Train Loss: 0.2494  Acc: 0.9198 | Val Loss: 0.9010  Val Acc: 0.7344
+Epoch 20/40  Train Loss: 0.2475  Acc: 0.9245 | Val Loss: 0.9042  Val Acc: 0.7344
+Epoch 21/40  Train Loss: 0.2357  Acc: 0.9229 | Val Loss: 0.9042  Val Acc: 0.7344
+Epoch 22/40  Train Loss: 0.2353  Acc: 0.9266 | Val Loss: 0.9120  Val Acc: 0.7344
+Epoch 23/40  Train Loss: 0.2514  Acc: 0.9219 | Val Loss: 0.9105  Val Acc: 0.7500
+Epoch 24/40  Train Loss: 0.2659  Acc: 0.9193 | Val Loss: 0.9336  Val Acc: 0.7344
+Epoch 25/40  Train Loss: 0.2486  Acc: 0.9219 | Val Loss: 0.9015  Val Acc: 0.7344
+Epoch 26/40  Train Loss: 0.2526  Acc: 0.9250 | Val Loss: 0.9666  Val Acc: 0.7344
+Epoch 27/40  Train Loss: 0.2657  Acc: 0.9135 | Val Loss: 0.9884  Val Acc: 0.7031
+Epoch 28/40  Train Loss: 0.2562  Acc: 0.9172 | Val Loss: 1.0726  Val Acc: 0.7188
+Epoch 29/40  Train Loss: 0.2655  Acc: 0.9193 | Val Loss: 0.9045  Val Acc: 0.7500
+Epoch 30/40  Train Loss: 0.3409  Acc: 0.8906 | Val Loss: 0.9153  Val Acc: 0.7031
+Epoch 31/40  Train Loss: 0.3492  Acc: 0.8964 | Val Loss: 0.9208  Val Acc: 0.7188
+Epoch 32/40  Train Loss: 0.3055  Acc: 0.8979 | Val Loss: 0.8143  Val Acc: 0.7812
+Epoch 33/40  Train Loss: 0.3517  Acc: 0.8807 | Val Loss: 1.1671  Val Acc: 0.6719
+Epoch 34/40  Train Loss: 0.3881  Acc: 0.8750 | Val Loss: 1.1665  Val Acc: 0.7188
+Epoch 35/40  Train Loss: 0.3782  Acc: 0.8714 | Val Loss: 1.1813  Val Acc: 0.7344
+Epoch 36/40  Train Loss: 0.3872  Acc: 0.8802 | Val Loss: 1.0087  Val Acc: 0.7344
+Epoch 37/40  Train Loss: 0.3991  Acc: 0.8682 | Val Loss: 1.0624  Val Acc: 0.7344
+Epoch 38/40  Train Loss: 0.3899  Acc: 0.8823 | Val Loss: 0.8412  Val Acc: 0.7969
+Epoch 39/40  Train Loss: 0.4096  Acc: 0.8708 | Val Loss: 0.8854  Val Acc: 0.7812
+Epoch 40/40  Train Loss: 0.3324  Acc: 0.8901 | Val Loss: 1.1020  Val Acc: 0.7188
+
+===northern-armadillo-806_SCNN Analysis===
+===Validation Results===
+ACC: 0.796875| PREC: 0.858798363095238| REC: 0.796875| F1: 0.8068381271506272
+
+===Test Results===
+ACC: 0.875| PREC: 0.8922619047619048| REC: 0.875| F1: 0.87338226010101
